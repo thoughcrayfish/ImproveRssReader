@@ -1,0 +1,9 @@
+<resources xmlns:http="http://schemas.android.com/tools">
+    <string name="app_name">RssFeeder</string>
+    <string name="refresh_started">Refresh started</string>
+    <string name="refresh_finished">Refresh finished</string>
+    <string name="rss_URL"> http://feeds.pcworld.com/pcworld/latestnews </string>
+
+    <string name="login_fail_title">Error</string>
+    <string name="login_fail_detail">Unable to connect</string>
+</resources>
