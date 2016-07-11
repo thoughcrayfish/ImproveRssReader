@@ -1,13 +1,13 @@
-package com.example.rssfeeder.ui.newsItem;
+package com.example.rssfeeder.ui.newsFeed;
 
-import com.example.rssfeeder.data.RssItem;
+import com.example.rssfeeder.model.RssItem;
 
 import java.util.List;
 
 /**
  * Created by Андрей on 04.07.2016.
  */
-public interface INewsItemInteractor
+public interface NewsFeedInteractor
 {
     interface onListGetListener
     {
@@ -15,5 +15,5 @@ public interface INewsItemInteractor
         void onError(String error);
     }
 
-    void getRssList(int position, onListGetListener listener, String url);
+    void getRssList(int position, String url, onListGetListener listener);
 }

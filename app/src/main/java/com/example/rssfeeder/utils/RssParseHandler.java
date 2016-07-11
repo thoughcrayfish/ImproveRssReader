@@ -1,6 +1,6 @@
 package com.example.rssfeeder.utils;
 
-import com.example.rssfeeder.data.RssItem;
+import com.example.rssfeeder.model.RssItem;
 
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;

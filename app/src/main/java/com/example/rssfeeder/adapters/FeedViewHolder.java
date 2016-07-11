@@ -12,13 +12,13 @@ import com.example.rssfeeder.R;
  */
 public class FeedViewHolder extends RecyclerView.ViewHolder
 {
-    protected ImageView imageView;
+
     protected TextView textView;
 
     public FeedViewHolder(View view)
     {
         super(view);
-        this.imageView = (ImageView)view.findViewById(R.id.thumbnail);
+
         this.textView = (TextView) view.findViewById(R.id.title);
 
         // rounding the image

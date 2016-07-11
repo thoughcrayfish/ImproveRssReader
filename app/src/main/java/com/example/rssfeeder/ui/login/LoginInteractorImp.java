@@ -1,13 +1,8 @@
 package com.example.rssfeeder.ui.login;
 
-import android.content.Intent;
-import android.widget.Toast;
-
-import com.example.rssfeeder.data.User;
+import com.example.rssfeeder.model.User;
 import com.example.rssfeeder.model.RetrofitRequest;
-import com.example.rssfeeder.ui.newsItem.NewsItemActivity;
 import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 
 
 import retrofit2.Call;
@@ -19,7 +14,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 /**
  * Created by Андрей on 05.07.2016.
  */
-public class LoginInteractorImp implements ILoginInteractor
+public class LoginInteractorImp implements LoginInteractor
 {
     public void sendRegistration(User user, final onLoginListener listener)
     {

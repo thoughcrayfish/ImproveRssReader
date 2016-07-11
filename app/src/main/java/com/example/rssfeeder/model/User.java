@@ -1,4 +1,4 @@
-package com.example.rssfeeder.data;
+package com.example.rssfeeder.model;
 
 /**
  * Created by Андрей on 05.07.2016.

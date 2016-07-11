@@ -1,4 +1,4 @@
-package com.example.rssfeeder.data;
+package com.example.rssfeeder.model;
 
 import android.media.Image;
 import android.nfc.Tag;

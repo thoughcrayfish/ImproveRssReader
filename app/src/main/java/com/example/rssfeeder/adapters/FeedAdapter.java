@@ -3,14 +3,12 @@ package com.example.rssfeeder.adapters;
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.text.Html;
-import android.util.Patterns;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.rssfeeder.R;
-import com.example.rssfeeder.data.RssItem;
-import com.squareup.picasso.Picasso;
+import com.example.rssfeeder.model.RssItem;
 
 import java.util.List;
 

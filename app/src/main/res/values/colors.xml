@@ -6,4 +6,6 @@
 
     <color name="buttonColor">#FF5252</color>
     <color name="backgroundColor">#424242</color>
+    <color name="transparent">#00000000</color>
+    <color name="progressBarBackground">#b4000000</color>
 </resources>

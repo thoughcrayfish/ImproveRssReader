@@ -1,22 +1,17 @@
 package com.example.rssfeeder.ui.login;
 
-import com.example.rssfeeder.data.User;
-import com.example.rssfeeder.model.RetrofitRequest;
-
-import retrofit2.Call;
-import retrofit2.http.GET;
-import retrofit2.http.Path;
+import com.example.rssfeeder.model.User;
 
 /**
  * Created by Андрей on 05.07.2016.
  */
-public class LoginPresenterImp implements ILoginPresenter, ILoginInteractor.onLoginListener
+public class LoginPresenterImpl implements LoginPresenter, LoginInteractor.onLoginListener, LoginInteractor.onRegisterListener
 {
     private LoginInteractorImp interactor;
-    private ILoginActivity view;
+    private LoginView view;
     User user;
 
-    public LoginPresenterImp(LoginActivity view)
+    public LoginPresenterImpl(LoginViewImpl view)
     {
         this.view = view;
         interactor = new LoginInteractorImp();
@@ -25,35 +20,51 @@ public class LoginPresenterImp implements ILoginPresenter, ILoginInteractor.onLo
     @Override
     public void onRegisterSuccess()
     {
-        // success logic
-        view.hideProgress();
+        if (view != null)
+        {
+            // success logic
+            view.hideProgress();
+        }
     }
     @Override
     public void onRegisterFail()
     {
-        // fail logic
-        view.hideProgress();
+        if (view != null)
+        {
+            // fail logic
+            view.hideProgress();
+        }
     }
     @Override
     public void onLoginSuccess()
     {
-        // success logic
-        view.hideProgress();
-        view.success();
+        if (view != null)
+        {
+            // success logic
+            view.hideProgress();
+            view.success();
+        }
     }
     @Override
     public void onLoginFail()
     {
-        // fail logic
-        view.hideProgress();
+        if (view != null)
+        {
+            // fail logic
+            view.hideProgress();
+            view.showFail();
+        }
     }
 
     @Override
     public void onConnectionError()
     {
-        // show error
-        view.hideProgress();
-        view.showError();
+        if (view != null)
+        {
+            // show error
+            view.hideProgress();
+            view.showError();
+        }
     }
 
 

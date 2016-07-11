@@ -3,4 +3,9 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="feed_fab_size">128dp</dimen>
+
+    <dimen name="login_input_padding_horizontal">24dp</dimen>
+    <dimen name="login_input_padding_vertical">32dp</dimen>
+
+
 </resources>

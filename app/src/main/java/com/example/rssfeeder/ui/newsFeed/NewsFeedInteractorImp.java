@@ -1,19 +1,17 @@
-package com.example.rssfeeder.ui.newsItem;
+package com.example.rssfeeder.ui.newsFeed;
 
 import com.example.rssfeeder.model.AsyncRSSTask;
-import com.example.rssfeeder.data.RssItem;
+import com.example.rssfeeder.model.RssItem;
 
 import java.util.List;
 
 /**
  * Created by Андрей on 04.07.2016.
  */
-public class NewsItemInteractorImp implements INewsItemInteractor
+public class NewsFeedInteractorImp implements NewsFeedInteractor
 {
-    String parsingResult;
-
     @Override
-    public void getRssList(int position, final onListGetListener listener, String url)
+    public void getRssList(int position, String url, final onListGetListener listener)
     {
 
 

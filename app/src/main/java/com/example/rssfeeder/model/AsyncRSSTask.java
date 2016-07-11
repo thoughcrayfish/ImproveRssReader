@@ -3,7 +3,6 @@ package com.example.rssfeeder.model;
 import android.os.AsyncTask;
 import android.util.Log;
 
-import com.example.rssfeeder.data.RssItem;
 import com.example.rssfeeder.utils.RssReader;
 
 import java.util.List;

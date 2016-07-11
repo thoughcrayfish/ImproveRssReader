@@ -1,6 +1,6 @@
 package com.example.rssfeeder.utils;
 
-import com.example.rssfeeder.data.RssItem;
+import com.example.rssfeeder.model.RssItem;
 
 import java.util.List;
 
