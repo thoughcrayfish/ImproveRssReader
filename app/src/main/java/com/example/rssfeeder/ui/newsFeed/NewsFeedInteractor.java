@@ -1,6 +1,7 @@
 package com.example.rssfeeder.ui.newsFeed;
 
-import com.example.rssfeeder.model.RssItem;
+import com.android.volley.VolleyError;
+import com.example.rssfeeder.repository.model.RssItem;
 
 import java.util.List;
 
@@ -12,7 +13,7 @@ public interface NewsFeedInteractor
     interface onListGetListener
     {
         void onSuccess(List<RssItem> feedList);
-        void onError(String error);
+        void onError(VolleyError error);
     }
 
     void getRssList(int position, String url, onListGetListener listener);

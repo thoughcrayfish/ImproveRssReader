@@ -8,7 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.rssfeeder.R;
-import com.example.rssfeeder.model.RssItem;
+import com.example.rssfeeder.repository.model.RssItem;
 
 import java.util.List;
 
@@ -26,24 +26,9 @@ public class FeedAdapter extends RecyclerView.Adapter<FeedViewHolder>
     public void onBindViewHolder(FeedViewHolder customViewHolder, int i)
     {
         RssItem rssItem = objects.get(i);
-
-        //Download image using picasso library
-//        String thumb = rssItem.getThumbnail();
-//        if (Patterns.WEB_URL.matcher(thumb).matches())
-//        {
-//            Picasso.with(mContext).load(rssItem.getThumbnail())
-//                    .error(R.drawable.ic_description_black_24dp)
-//                    .placeholder(R.drawable.ic_description_black_24dp)
-//                    .into(customViewHolder.imageView);
-//        }
-//        else
-//        {
-//            Picasso.with(mContext).load(R.drawable.ic_description_black_24dp)
-//                    .into(customViewHolder.imageView);
-//        }
         //Setting text view title
-        customViewHolder.textView.setText(Html.fromHtml(rssItem.getTitle()));
-
+        customViewHolder.title.setText(Html.fromHtml(rssItem.getTitle()));
+        customViewHolder.detail.setText(Html.fromHtml(rssItem.getDetail()));
     }
 
     public FeedViewHolder onCreateViewHolder(ViewGroup viewGroup, int i)

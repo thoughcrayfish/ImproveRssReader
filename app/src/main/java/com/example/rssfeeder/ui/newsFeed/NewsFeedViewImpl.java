@@ -1,9 +1,6 @@
 package com.example.rssfeeder.ui.newsFeed;
 
-import android.app.Activity;
-import android.app.AlertDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -13,15 +10,14 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.EditText;
 import android.widget.ProgressBar;
-import android.widget.Toast;
 
 
 import com.example.rssfeeder.AbstractActivity;
 import com.example.rssfeeder.R;
 import com.example.rssfeeder.adapters.FeedAdapter;
-import com.example.rssfeeder.model.RssItem;
+import com.example.rssfeeder.app.Config;
+import com.example.rssfeeder.repository.model.RssItem;
 import com.example.rssfeeder.utils.AlertUtils;
 
 import java.util.List;
@@ -38,7 +34,6 @@ public class NewsFeedViewImpl extends AbstractActivity implements NewsFeedView, 
     int lastItem = 0;
     private NewsFeedPresenterImp presenter;
     final Context context = this;
-    String url;
 
     // ButterKnife
     @BindView(R.id.progressBar_feed) ProgressBar progressBar;
@@ -53,7 +48,6 @@ public class NewsFeedViewImpl extends AbstractActivity implements NewsFeedView, 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_feed);
         ButterKnife.bind(this);
-        url = getResources().getString(R.string.rss_URL);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         // Refresh Listener
         mSwipeRefreshLayout.setOnRefreshListener(NewsFeedViewImpl.this);
@@ -68,7 +62,7 @@ public class NewsFeedViewImpl extends AbstractActivity implements NewsFeedView, 
         });
         // presenter
         presenter = new NewsFeedPresenterImp(this);
-        presenter.getRssList(lastItem, url);
+        presenter.getRssList(lastItem);
 
     }
 
@@ -80,7 +74,7 @@ public class NewsFeedViewImpl extends AbstractActivity implements NewsFeedView, 
     @Override
     public void onRefresh()
     {
-        presenter.getRssList(lastItem, getResources().getString(R.string.rss_URL));
+//        presenter.getRssList(lastItem, Config.RssUrl);
         mSwipeRefreshLayout.setRefreshing(true);
         mSwipeRefreshLayout.postDelayed(new Runnable() {
             @Override

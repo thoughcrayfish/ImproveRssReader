@@ -5,5 +5,5 @@ package com.example.rssfeeder.ui.newsFeed;
  */
 public interface NewsFeedPresenter
 {
-    public void getRssList(int lastItem, String url);
+    public void getRssList(int lastItem);
 }

@@ -1,6 +1,6 @@
 package com.example.rssfeeder.ui.login;
 
-import com.example.rssfeeder.model.User;
+import com.example.rssfeeder.repository.model.User;
 
 /**
  * Created by Андрей on 05.07.2016.
@@ -67,25 +67,25 @@ public class LoginPresenterImpl implements LoginPresenter, LoginInteractor.onLog
         }
     }
 
-
-
-    public void sendLogin(String username, String password)
+    @Override
+    public void sendPOSTRequest(PostRequestType postRequestType, String username, String password)
     {
-        // validation here probably?
-        view.showProgress();
-        user = new User();
-        user.setUserName(username); user.setUserPassword(password);
+        if (postRequestType == PostRequestType.LOGIN)
+        {
+            // validation here probably?
+            view.showProgress();
+            user = new User();
+            user.setUserName(username); user.setUserPassword(password);
+            interactor.sendLogin(user, this);
+        }
+        if (postRequestType == PostRequestType.REGISTRATION)
+        {
+            view.showProgress();
+            user = new User();
+            user.setUserName(username); user.setUserPassword(password);
+            // validation here probably?
+            interactor.sendRegistration(user, this);
 
-        interactor.sendLogin(user, this);
-
-    }
-
-    public void sendRegistration(String username, String password)
-    {
-        view.showProgress();
-        user = new User();
-        user.setUserName(username); user.setUserPassword(password);
-        // validation here probably?
-        interactor.sendRegistration(user, this);
+        }
     }
 }

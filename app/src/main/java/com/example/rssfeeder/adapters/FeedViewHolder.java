@@ -13,15 +13,14 @@ import com.example.rssfeeder.R;
 public class FeedViewHolder extends RecyclerView.ViewHolder
 {
 
-    protected TextView textView;
-
+    protected TextView title;
+    protected TextView detail;
     public FeedViewHolder(View view)
     {
         super(view);
 
-        this.textView = (TextView) view.findViewById(R.id.title);
-
-        // rounding the image
+        this.title = (TextView) view.findViewById(R.id.textView_feedTitle);
+        this.detail = (TextView) view.findViewById(R.id.textView_feedDetail);
 
     }
 }

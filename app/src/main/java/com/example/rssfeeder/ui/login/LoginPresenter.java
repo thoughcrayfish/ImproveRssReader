@@ -5,6 +5,11 @@ package com.example.rssfeeder.ui.login;
  */
 public interface LoginPresenter
 {
-
+    enum PostRequestType
+    {
+        LOGIN,
+        REGISTRATION
+    }
+    void sendPOSTRequest(PostRequestType postRequestType, String username, String password);
 
 }

@@ -63,13 +63,13 @@ public class LoginViewImpl extends AbstractActivity implements LoginView
     private void registerCheck()
     {
         if (loginEditText != null && passwordEditText != null)
-            presenter.sendRegistration(loginEditText.getText().toString(), passwordEditText.getText().toString());
+            presenter.sendPOSTRequest(LoginPresenter.PostRequestType.REGISTRATION, loginEditText.getText().toString(), passwordEditText.getText().toString());
     }
 
     private void loginCheck()
     {
         if (loginEditText != null && passwordEditText != null)
-        presenter.sendLogin(loginEditText.getText().toString(), passwordEditText.getText().toString());
+        presenter.sendPOSTRequest(LoginPresenter.PostRequestType.LOGIN, loginEditText.getText().toString(), passwordEditText.getText().toString());
     }
 
     public void success()
@@ -95,7 +95,7 @@ public class LoginViewImpl extends AbstractActivity implements LoginView
     }
 
 
-    @OnClick(R.id.button_register)
+    @OnClick({R.id.button_register, R.id.button_login})
     public void onClick(View view)
     {
         {

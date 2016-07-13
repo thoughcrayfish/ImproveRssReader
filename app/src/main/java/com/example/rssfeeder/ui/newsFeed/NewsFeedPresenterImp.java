@@ -1,6 +1,8 @@
 package com.example.rssfeeder.ui.newsFeed;
 
-import com.example.rssfeeder.model.RssItem;
+import com.android.volley.VolleyError;
+import com.example.rssfeeder.app.Config;
+import com.example.rssfeeder.repository.model.RssItem;
 
 import java.util.List;
 
@@ -9,7 +11,6 @@ import java.util.List;
  */
 public class NewsFeedPresenterImp implements NewsFeedPresenter, NewsFeedInteractor.onListGetListener
 {
-    private String url;
     private NewsFeedViewImpl view;
     private NewsFeedInteractorImp interactor;
 
@@ -20,13 +21,13 @@ public class NewsFeedPresenterImp implements NewsFeedPresenter, NewsFeedInteract
     }
 
     @Override
-    public void getRssList(int position, String url)
+    public void getRssList(int position)
     {
         if (view != null)
         {
             // show progress
             view.showProgress();
-            interactor.getRssList(position, url, this);
+            interactor.getRssList(position, Config.RssUrl, this);
 
         }
     }
@@ -43,7 +44,7 @@ public class NewsFeedPresenterImp implements NewsFeedPresenter, NewsFeedInteract
 
     }
 
-    public void onError(String error)
+    public void onError(VolleyError error)
     {
         // show error
         if (view != null)

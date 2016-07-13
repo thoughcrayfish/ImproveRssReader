@@ -1,4 +1,4 @@
-package com.example.rssfeeder.model;
+package com.example.rssfeeder.repository.model;
 
 import android.media.Image;
 import android.nfc.Tag;
@@ -10,15 +10,20 @@ import android.widget.EditText;
 public class RssItem
 {
     private String title;
+    private String detail;
     private String thumbnail;
     private String description;
-    private String articleImage;
-    public String pubDate;
+
     public String link;
 
     public void setTitle(String _title)
     {
         this.title = _title;
+    }
+
+    public void setDetail(String _detail)
+    {
+        this.detail = _detail;
     }
 
     public void setDescription(String _description)
@@ -44,8 +49,10 @@ public class RssItem
         return title;
     }
 
-    public void setLink(String link)
+    public String getDetail()
     {
-        this.link = link;
+        return detail;
     }
+
+
 }

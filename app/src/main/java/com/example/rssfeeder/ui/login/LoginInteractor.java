@@ -1,6 +1,6 @@
 package com.example.rssfeeder.ui.login;
 
-import com.example.rssfeeder.model.User;
+import com.example.rssfeeder.repository.model.User;
 
 /**
  * Created by Андрей on 05.07.2016.

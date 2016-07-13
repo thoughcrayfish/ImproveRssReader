@@ -6,6 +6,7 @@ import android.content.DialogInterface;
 import android.widget.EditText;
 
 import com.example.rssfeeder.R;
+import com.example.rssfeeder.app.Config;
 import com.example.rssfeeder.ui.newsFeed.NewsFeedPresenterImp;
 import com.example.rssfeeder.ui.newsFeed.NewsFeedViewImpl;
 
@@ -59,7 +60,8 @@ public class AlertUtils
             public void onClick(DialogInterface dialog, int whichButton)
             {
                 String value = input.getText().toString().trim();
-                presenter.getRssList(0, value);
+                Config.RssUrl = value;
+                presenter.getRssList(0);
             }
         });
 

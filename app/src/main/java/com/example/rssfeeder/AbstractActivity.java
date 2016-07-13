@@ -19,6 +19,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
 
+import com.example.rssfeeder.app.RssFeederApplication;
 import com.example.rssfeeder.utils.AlertUtils;
 
 import java.util.List;
@@ -39,6 +40,8 @@ public abstract class AbstractActivity extends AppCompatActivity
         layoutInflater.inflate(layoutResID, (ViewGroup) container.findViewById(R.id.cont_root), true);
 
         super.setContentView(container);
+        setupUI(findViewById(R.id.scrollView_login));
+
         progress = (RelativeLayout) findViewById(R.id.progress);
         progress.setVisibility(View.GONE);
 
@@ -142,10 +145,36 @@ public abstract class AbstractActivity extends AppCompatActivity
             return false;
     }
 
-    public static void hideSoftKeyboard(Activity activity)
+    protected void setupUI(View view)
     {
-        InputMethodManager inputMethodManager = (InputMethodManager)  activity.getSystemService(Activity.INPUT_METHOD_SERVICE);
-        inputMethodManager.hideSoftInputFromWindow(activity.getCurrentFocus().getWindowToken(), 0);
+        if (view != null)
+        {
+            view.setOnFocusChangeListener(new View.OnFocusChangeListener()
+            {
+                @Override
+                public void onFocusChange(View v, boolean hasFocus)
+                {
+                    if (hasFocus)
+                    {
+                        onClickAway();
+                    }
+                }
+            });
+        }
+    }
+
+    protected void onClickAway()
+    {
+        //hide soft keyboard
+        InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
+        if (inputMethodManager != null)
+        {
+            View currentFocus = getCurrentFocus();
+            if (currentFocus != null)
+            {
+                inputMethodManager.hideSoftInputFromWindow(currentFocus.getWindowToken(), 0);
+            }
+        }
     }
 
 }

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="http_error_400">Bad Request</string>
+    <string name="http_error_401">Unauthorized</string>
+    <string name="http_error_403">Forbidden</string>
+    <string name="http_error_404">Not Found</string>
+    <string name="http_error_405">Method Not Allowed</string>
+    <string name="http_error_408">Request Timeout</string>
+    <string name="http_error_500">Internal Server Error</string>
+    <string name="http_error_502">Bad Gateway</string>
+    <string name="http_error_503">Service Unavailable</string>
+    <string name="http_error_504">Gateway Timeout</string>
+    <string name="http_no_internet">No internet connection</string>
+    <string name="error_999">We have a server error. Please try again later</string>
+
+
+    <string name="error_invalid_email">The specified email is invalid. Please provide the correct email address.</string>
+    <string name="error_operation_suspended">The next try could be possible in %1$s</string>
+    <string name="error_unknown_error">The operation cannot be accomplished, please try again later</string>
+
+    <string name="error_invalid_code">The specified confirmation code is invalid. Please try again. You have %1$d more tries</string>
+    <string name="error_operation_repeat_required">The email registration should be started again</string>
+
+    <string name="error_invalid_phone">The specified phone number is invalid. Please provide the correct phone number</string>
+    <string name="error_signature_failed">The registration on this device has expired. If you want to continue using that device, please go through the registration process once again</string>
+    <string name="error_sig">SignatureCompromised</string>
+    <string name="validation_expired_error">The registration on this device has expired. If you want to continue using that device, please go through the registration process once again</string>
+    <string name="validation_code_incorrect_error">Confirmation code is not valid</string>
+
+    <string name="error_key_unknown">The key does not exist and cannot be used. Do you want to delete the key?</string>
+    <string name="error_key_invalid">The key is not valid yet. You can use the key as soon as it becomes valid</string>
+    <string name="error_key_expired">The key is expired and cannot be used anymore. Please request new key, if needed. Do you want to delete the key?</string>
+    <string name="error_key_revoked">The key is revoked by the key issuer and cannot be used anymore. Please request new key, if needed. Do you want to delete the key?</string>
+    <string name="error_key_delete">The key does not exist and cannot be used. Do you want to delete the key?</string>
+    <string name="error_key_open">Open failed. Please try again later. If the problem persist, please contact the key issuer</string>
+
+    <string name="key_rename_error">Name should not be empty</string>
+</resources>
