@@ -1,28 +1,14 @@
 package com.example.rssfeeder.ui.login;
 
-import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
 
-import com.example.rssfeeder.app.Config;
-import com.example.rssfeeder.app.RssFeederApplication;
-import com.example.rssfeeder.repository.api.requests.ApiRequests;
-import com.example.rssfeeder.repository.api.requests.GsonGetRequest;
-import com.example.rssfeeder.repository.api.requests.GsonPostRequest;
+import com.example.rssfeeder.repository.api.RssVolley;
+import com.example.rssfeeder.repository.api.Urls;
 import com.example.rssfeeder.repository.api.requests.JsonObjectRequest;
-import com.example.rssfeeder.repository.model.RssItem;
-import com.example.rssfeeder.repository.model.User;
-import com.example.rssfeeder.ui.newsFeed.NewsFeedInteractor;
+import com.example.rssfeeder.repository.model.LoginUser;
 import com.google.gson.Gson;
-import com.google.gson.JsonObject;
 
 import org.json.JSONArray;
-import org.json.JSONObject;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 
 
 /**
@@ -31,13 +17,13 @@ import java.util.Map;
 public class LoginInteractorImp implements LoginInteractor
 {
     public static final String TAG = "JsonObject post";
-    public void sendRegistration(User user, final onLoginListener listener)
+    public void sendRegistration(LoginUser loginUser, final onLoginListener listener)
     {
         Gson gson = new Gson();
-        gson.toJson(user);
-        String jsonObject = gson.toJson(user);
+        gson.toJson(loginUser);
+        String jsonObject = gson.toJson(loginUser);
 
-        final JsonObjectRequest postRequest = new JsonObjectRequest(Request.Method.POST, Config.RssUrl, jsonObject, new JsonObjectRequest.JsonCallback() {
+        final JsonObjectRequest postRequest = new JsonObjectRequest(Request.Method.POST, Urls.RssUrl, jsonObject, new JsonObjectRequest.JsonCallback() {
             @Override
             public void onSuccess(JSONArray result)
             {
@@ -52,11 +38,11 @@ public class LoginInteractorImp implements LoginInteractor
         });
 
 
-        RssFeederApplication.addRequest(postRequest, TAG);
+        RssVolley.addRequest(postRequest, TAG);
     }
 
-    public void sendLogin(User user, final onLoginListener listener)
+    public void sendLogin(LoginUser loginUser, final onLoginListener listener)
     {
-            sendRegistration(user, listener);  //  JUST FOR NOW
+            sendRegistration(loginUser, listener);  //  JUST FOR NOW
     }
 }

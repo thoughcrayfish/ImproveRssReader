@@ -10,6 +10,7 @@ public interface LoginPresenter
         LOGIN,
         REGISTRATION
     }
-    void sendPOSTRequest(PostRequestType postRequestType, String username, String password);
+    void loginCheck(String loginText, String passwordText);
+    void registrationCheck(String registrationText, String passwordText);
 
 }

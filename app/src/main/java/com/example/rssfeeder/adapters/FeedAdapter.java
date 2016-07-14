@@ -33,8 +33,7 @@ public class FeedAdapter extends RecyclerView.Adapter<FeedViewHolder>
 
     public FeedViewHolder onCreateViewHolder(ViewGroup viewGroup, int i)
     {
-
-        View view = inflater.inflate(R.layout.list_row, null);
+        View view = inflater.inflate(R.layout.list_row, viewGroup, false);
 
         FeedViewHolder viewHolder = new FeedViewHolder(view);
         return viewHolder;

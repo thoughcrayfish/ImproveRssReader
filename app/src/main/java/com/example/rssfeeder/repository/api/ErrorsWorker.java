@@ -47,59 +47,6 @@ public class ErrorsWorker
                 return context.getResources().getString(R.string.http_error_500);
         }
     }
-
-    public static String getDefaultError()
-    {
-        Context context = RssFeederApplication.getInstance();
-        return context.getResources().getString(R.string.error_999);
-    }
-
-    public static void volleyErrorHandler(VolleyError volleyError, RssVolley.volleyCallbacks callbacks)
-    {
-        try
-        {
-            ErrorObject object = null;
-            if (volleyError.networkResponse != null)
-            {
-                String jsonString =
-                        new String(volleyError.networkResponse.data, HttpHeaderParser.parseCharset(volleyError.networkResponse.headers));
-                JSONObject error = new JSONObject(jsonString);
-                Gson gson = new Gson();
-
-                object = gson.fromJson(error.toString(), ErrorObject.class);
-
-                String duration = error.has("Time") ? error.getString("Time") : "";
-                if (!duration.isEmpty())
-                {
-                    long time = getDuration(duration);
-                    object.setTime(time);
-
-                }
-            }
-            if (object != null)
-            {
-                callbacks.onError(ErrorsWorker.getError(object), object.getTime(), object.getFaultCode());
-            }
-            else if (volleyError.networkResponse != null)
-            {
-                callbacks.onError(ErrorsWorker.getNetworkError(volleyError.networkResponse.statusCode), null, volleyError.networkResponse.statusCode);
-            } else
-                callbacks.onError(ErrorsWorker.getDefaultError(), null, 999);
-
-        }
-        catch (Exception e)
-        {
-            e.printStackTrace();
-            try
-            {
-                callbacks.onError(ErrorsWorker.getDefaultError(), null, 999);
-            } catch (Exception ignore)
-            {
-
-            }
-        }
-    }
-
     public static long getDuration(String textDur)
     {
         String time = textDur.substring(2);
@@ -117,36 +64,4 @@ public class ErrorsWorker
         }
         return duration / 1000L;
     }
-
-    public static String getError(ErrorObject error)
-    {
-        Context context = RssFeederApplication.getInstance();
-        switch (error.getFaultMessage())
-        {
-            case "InvalidEmail":
-                return context.getResources().getString(R.string.error_invalid_email);
-            case "OperationSuspended":
-                return context.getResources().getString(R.string.error_operation_suspended);
-            case "UnknownError":
-                return context.getResources().getString(R.string.error_unknown_error);
-            case "InvalidConfirmation":
-                return String.format(context.getResources().getString(R.string.error_invalid_code), error.getCount());
-            case "OperationRepeatRequired":
-                return context.getResources().getString(R.string.error_operation_repeat_required);
-            case "InvalidPhone":
-                return context.getResources().getString(R.string.error_invalid_phone);
-            case "SignatureFailed":
-                return context.getResources().getString(R.string.error_signature_failed);
-            case "SignatureCompromised":
-                return context.getResources().getString(R.string.error_sig);
-
-            case "OpenFailed":
-                return context.getResources().getString(R.string.error_key_open);
-
-            default:
-                return context.getResources().getString(R.string.error_unknown_error);
-        }
-    }
-
-
 }

@@ -2,6 +2,7 @@ package com.example.rssfeeder.repository.api;
 
 import android.content.Context;
 
+import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.Volley;
 
@@ -25,12 +26,10 @@ public class RssVolley
         // no instances
     }
 
-
     public static void init(Context context)
     {
         mRequestQueue = Volley.newRequestQueue(context);
     }
-
 
     public static RequestQueue getRequestQueue()
     {
@@ -44,7 +43,7 @@ public class RssVolley
         }
     }
 
-    public static String getRequestURL(Map<String, String> params, String baseURL)
+    public static String getRequestURL(Map<String, String> params, String baseURL)      // Creating POST url
     {
         StringBuilder result = new StringBuilder();
         result.append(baseURL);
@@ -83,7 +82,6 @@ public class RssVolley
 
     }
 
-
     public static Map<String, String> getDefaultHeaders(Map<String, String> headers)
     {
         if (headers == null)
@@ -91,5 +89,23 @@ public class RssVolley
 
         headers.put("lang", Locale.getDefault().getLanguage());
         return headers;
+    }
+    public void cancelPendingRequests(Object tag)
+    {
+        if (mRequestQueue != null)
+        {
+            mRequestQueue.cancelAll(tag);
+        }
+    }
+
+    public static void addRequest(Request<?> request, String tag)
+    {
+        request.setTag(tag);
+        addRequest(request);
+    }
+
+    public static void addRequest(Request<?> request)
+    {
+        getRequestQueue().add(request);
     }
 }

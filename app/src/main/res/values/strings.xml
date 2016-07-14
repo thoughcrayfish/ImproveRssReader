@@ -6,8 +6,9 @@
 
     <string name="registration_button_title">No account yet? Create one</string>
 
-    <string name="login_error">Error</string>
+    <string name="login_error">Login error</string>
+    <string name="connection_error_title">Error</string>
     <string name="login_fail">Invalid Login/password</string>
-    <string name="login_error_detail">Unable to connect</string>
+    <string name="connection_error_detail">Unable to connect</string>
     <string name="alert_newRss">Add New RSS source</string>
 </resources>

@@ -11,10 +11,14 @@ public class RssItem
 {
     private String title;
     private String detail;
-    private String thumbnail;
-    private String description;
 
-    public String link;
+    private String type;
+    private int commentQuantity;
+    private int likeQuantity;
+    private User user;
+
+    public RssItem() {
+    }
 
     public void setTitle(String _title)
     {
@@ -26,24 +30,6 @@ public class RssItem
         this.detail = _detail;
     }
 
-    public void setDescription(String _description)
-    {
-        this.description = _description;
-    }
-
-    public String getDescription() { return  description; }
-
-    public void setThumbnail (String _thumbnail)
-    {
-        this.thumbnail = _thumbnail;
-    }
-
-    public String getThumbnail()
-    {
-        return thumbnail;
-    }
-
-
     public String getTitle()
     {
         return title;
@@ -54,5 +40,43 @@ public class RssItem
         return detail;
     }
 
+    public String getType()
+    {
+        return type;
+    }
 
+    public void setType(String type)
+    {
+        this.type = type;
+    }
+
+    public int getCommentQuantity()
+    {
+        return commentQuantity;
+    }
+
+    public void setCommentQuantity(int commentQuantity)
+    {
+        this.commentQuantity = commentQuantity;
+    }
+
+    public int getLikeQuantity()
+    {
+        return likeQuantity;
+    }
+
+    public void setLikeQuantity(int likeQuantity)
+    {
+        this.likeQuantity = likeQuantity;
+    }
+
+    public User getUser()
+    {
+        return user;
+    }
+
+    public void setUser(User user)
+    {
+        this.user = user;
+    }
 }

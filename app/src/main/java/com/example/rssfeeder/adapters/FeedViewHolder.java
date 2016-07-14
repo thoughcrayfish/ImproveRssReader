@@ -15,6 +15,7 @@ public class FeedViewHolder extends RecyclerView.ViewHolder
 
     protected TextView title;
     protected TextView detail;
+
     public FeedViewHolder(View view)
     {
         super(view);

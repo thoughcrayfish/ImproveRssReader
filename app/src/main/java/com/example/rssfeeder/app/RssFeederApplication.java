@@ -21,7 +21,7 @@ public class RssFeederApplication extends Application
     {
         super.onCreate();
         instance = this;
-
+        initVolley();
     }
 
     private void initVolley()
@@ -32,34 +32,4 @@ public class RssFeederApplication extends Application
     {
         return instance;
     }
-
-    public RequestQueue getRequestQueue()
-    {
-        if (mRequestQueue == null)
-        {
-            mRequestQueue = Volley.newRequestQueue(getApplicationContext());
-        }
-
-        return mRequestQueue;
-    }
-
-    public void cancelPendingRequests(Object tag)
-    {
-        if (mRequestQueue != null)
-        {
-            mRequestQueue.cancelAll(tag);
-        }
-    }
-
-    public static void addRequest(Request<?> request, String tag)
-    {
-        request.setTag(tag);
-        addRequest(request);
-    }
-
-    public static void addRequest(Request<?> request)
-    {
-        getInstance().getRequestQueue().add(request);
-    }
-
 }

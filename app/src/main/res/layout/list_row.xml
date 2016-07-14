@@ -5,32 +5,29 @@
     android:layout_height="80dp"
     android:layout_margin="8dp">
 
-    <RelativeLayout
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="80dp">
+
+        android:layout_height="@dimen/row_height">
 
         <TextView
             android:id="@+id/textView_feedTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:maxLines="1"
-            android:padding="8dp"
+            android:padding="@dimen/row_padding"
             android:textAppearance="@style/TextAppearance.AppCompat.Title"
-            tools:text="Saddasdasdaasdasad"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentStart="true" />
+            tools:text="Saddasdasdaasdasad"/>
         <TextView
             android:id="@+id/textView_feedDetail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="top"
-            android:maxLines="3"
-            android:padding="8dp"
+            android:maxLines="1"
+            android:padding="@dimen/row_padding"
             android:textAppearance="@style/TextAppearance.AppCompat.Small"
-            tools:text="Saddasdasdaasdasad"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/textView_feedTitle"
-            android:layout_alignParentBottom="true" />
+            tools:text="Saddasdasdaasdasad"/>
 
-    </RelativeLayout>
+    </LinearLayout>
 </android.support.v7.widget.CardView>

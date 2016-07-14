@@ -1,12 +1,10 @@
 package com.example.rssfeeder.ui.login;
 
-import android.app.AlertDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -16,7 +14,7 @@ import android.widget.ScrollView;
 
 import com.example.rssfeeder.AbstractActivity;
 import com.example.rssfeeder.R;
-import com.example.rssfeeder.ui.newsFeed.NewsFeedViewImpl;
+import com.example.rssfeeder.ui.newsFeed.NewsFeedActivity;
 import com.example.rssfeeder.utils.AlertUtils;
 
 import butterknife.BindView;
@@ -56,25 +54,15 @@ public class LoginViewImpl extends AbstractActivity implements LoginView
 
     public void showFail()
     {
-        AlertUtils.showAlert(getResources().getString(R.string.login_fail), getResources().getString(R.string.login_error_detail), context);
+        AlertUtils.showSimpleAlert(getResources().getString(R.string.login_fail), getResources().getString(R.string.login_fail), context);
     }
 
 
-    private void registerCheck()
-    {
-        if (loginEditText != null && passwordEditText != null)
-            presenter.sendPOSTRequest(LoginPresenter.PostRequestType.REGISTRATION, loginEditText.getText().toString(), passwordEditText.getText().toString());
-    }
 
-    private void loginCheck()
-    {
-        if (loginEditText != null && passwordEditText != null)
-        presenter.sendPOSTRequest(LoginPresenter.PostRequestType.LOGIN, loginEditText.getText().toString(), passwordEditText.getText().toString());
-    }
 
     public void success()
     {
-        Intent intent = new Intent(this, NewsFeedViewImpl.class);
+        Intent intent = new Intent(this, NewsFeedActivity.class);
         startActivity(intent);
         this.finish();
     }
@@ -90,8 +78,11 @@ public class LoginViewImpl extends AbstractActivity implements LoginView
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
 
 // finally change the color
-        window.setStatusBarColor(Color.TRANSPARENT);
-        window.setNavigationBarColor(Color.TRANSPARENT);
+        if (Build.VERSION.SDK_INT >= 21)
+        {
+            window.setStatusBarColor(Color.TRANSPARENT);
+            window.setNavigationBarColor(Color.TRANSPARENT);
+        }
     }
 
 
@@ -101,11 +92,11 @@ public class LoginViewImpl extends AbstractActivity implements LoginView
         {
             switch (view.getId()) {
                 case R.id.button_login:
-                    loginCheck();
+                    presenter.loginCheck(loginEditText.getText().toString(), passwordEditText.getText().toString());
                     break;
 
                 case R.id.button_register:
-                    registerCheck();
+                    presenter.registrationCheck(loginEditText.getText().toString(), passwordEditText.getText().toString());
                     break;
 
             }

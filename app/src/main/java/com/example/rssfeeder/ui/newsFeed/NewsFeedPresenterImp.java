@@ -1,7 +1,7 @@
 package com.example.rssfeeder.ui.newsFeed;
 
 import com.android.volley.VolleyError;
-import com.example.rssfeeder.app.Config;
+import com.example.rssfeeder.repository.api.Urls;
 import com.example.rssfeeder.repository.model.RssItem;
 
 import java.util.List;
@@ -11,10 +11,10 @@ import java.util.List;
  */
 public class NewsFeedPresenterImp implements NewsFeedPresenter, NewsFeedInteractor.onListGetListener
 {
-    private NewsFeedViewImpl view;
+    private NewsFeedActivity view;
     private NewsFeedInteractorImp interactor;
 
-    public NewsFeedPresenterImp(NewsFeedViewImpl view)
+    public NewsFeedPresenterImp(NewsFeedActivity view)
     {
         this.view = view;
         interactor = new NewsFeedInteractorImp();
@@ -27,7 +27,7 @@ public class NewsFeedPresenterImp implements NewsFeedPresenter, NewsFeedInteract
         {
             // show progress
             view.showProgress();
-            interactor.getRssList(position, Config.RssUrl, this);
+            interactor.getRssList(position, Urls.RssUrl, this);
 
         }
     }

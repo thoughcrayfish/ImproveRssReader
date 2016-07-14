@@ -16,7 +16,6 @@ import android.widget.ProgressBar;
 import com.example.rssfeeder.AbstractActivity;
 import com.example.rssfeeder.R;
 import com.example.rssfeeder.adapters.FeedAdapter;
-import com.example.rssfeeder.app.Config;
 import com.example.rssfeeder.repository.model.RssItem;
 import com.example.rssfeeder.utils.AlertUtils;
 
@@ -24,11 +23,12 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 /**
  * Created by Андрей on 04.07.2016.
  */
-public class NewsFeedViewImpl extends AbstractActivity implements NewsFeedView, SwipeRefreshLayout.OnRefreshListener
+public class NewsFeedActivity extends AbstractActivity implements NewsFeedView, SwipeRefreshLayout.OnRefreshListener
 {
     private static final String TAG = "RSS Reader";
     int lastItem = 0;
@@ -50,20 +50,10 @@ public class NewsFeedViewImpl extends AbstractActivity implements NewsFeedView, 
         ButterKnife.bind(this);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         // Refresh Listener
-        mSwipeRefreshLayout.setOnRefreshListener(NewsFeedViewImpl.this);
-        // FAB
-        feedFAB.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View v)
-            {
-                addSourceAlert();
-            }
-        });
+        mSwipeRefreshLayout.setOnRefreshListener(NewsFeedActivity.this);
         // presenter
         presenter = new NewsFeedPresenterImp(this);
         presenter.getRssList(lastItem);
-
     }
 
     private void addSourceAlert()
@@ -74,9 +64,10 @@ public class NewsFeedViewImpl extends AbstractActivity implements NewsFeedView, 
     @Override
     public void onRefresh()
     {
-//        presenter.getRssList(lastItem, Config.RssUrl);
+//        presenter.getRssList(lastItem, Urls.RssUrl);
         mSwipeRefreshLayout.setRefreshing(true);
-        mSwipeRefreshLayout.postDelayed(new Runnable() {
+        mSwipeRefreshLayout.postDelayed(new Runnable()
+        {
             @Override
             public void run()
             {
@@ -88,9 +79,16 @@ public class NewsFeedViewImpl extends AbstractActivity implements NewsFeedView, 
 
     public void loadList(List<RssItem> feedList)
     {
-        FeedAdapter adapter = new FeedAdapter(NewsFeedViewImpl.this, feedList);
+        FeedAdapter adapter = new FeedAdapter(NewsFeedActivity.this, feedList);
         mRecyclerView.setAdapter(adapter);
     }
+
+    @Override
+    public void showError()
+    {
+        AlertUtils.showSimpleAlert(getResources().getString(R.string.connection_error_title), getResources().getString(R.string.connection_error_detail), context);
+    }
+
 
     private void setColors()
     {
@@ -101,5 +99,13 @@ public class NewsFeedViewImpl extends AbstractActivity implements NewsFeedView, 
 
         window.setStatusBarColor(Color.TRANSPARENT);
         window.setNavigationBarColor(Color.TRANSPARENT);
+    }
+
+    @OnClick(R.id.fab_feed)
+    public void onClick(View view)
+    {
+        {
+            addSourceAlert();
+        }
     }
 }

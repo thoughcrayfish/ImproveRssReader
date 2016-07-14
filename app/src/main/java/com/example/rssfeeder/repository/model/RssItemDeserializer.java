@@ -21,7 +21,7 @@ public class RssItemDeserializer implements JsonDeserializer<RssItem>
         final JsonObject jsonObject = json.getAsJsonObject();
 
         rssItem.setTitle(jsonObject.get("title").getAsString());
-        rssItem.setDetail(jsonObject.get("body").getAsString());
+        rssItem.setDetail(jsonObject.get("text").getAsString());
 
         return rssItem;
     }

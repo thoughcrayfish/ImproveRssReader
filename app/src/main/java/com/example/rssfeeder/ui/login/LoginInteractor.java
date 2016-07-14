@@ -1,6 +1,6 @@
 package com.example.rssfeeder.ui.login;
 
-import com.example.rssfeeder.repository.model.User;
+import com.example.rssfeeder.repository.model.LoginUser;
 
 /**
  * Created by Андрей on 05.07.2016.
@@ -19,6 +19,6 @@ public interface LoginInteractor
         public void onRegisterSuccess();
         public void onRegisterFail();
     }
-    void sendRegistration(User user, onLoginListener listener);
-    void sendLogin(User user, onLoginListener listener);
+    void sendRegistration(LoginUser loginUser, onLoginListener listener);
+    void sendLogin(LoginUser loginUser, onLoginListener listener);
 }
