@@ -46,8 +46,8 @@
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:layout_marginStart="29dp"
-        android:text="30 минут"
-        android:textColor="#a0919191"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textSize="@dimen/textSize_footerCreatedDate"
         tools:text="30 минут назад" />
 
     <ImageView

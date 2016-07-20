@@ -6,6 +6,8 @@ import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.animation.AccelerateInterpolator;
 import android.view.animation.DecelerateInterpolator;
@@ -74,6 +76,12 @@ public class NewsFeedActivity extends AbstractActivity implements NewsFeedView, 
 
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.actions_feed, menu);
+        return true;
+    }
     public void loadList(List<PostObject> result)
     {
         FeedAdapter adapter = new FeedAdapter(NewsFeedActivity.this, result);
@@ -121,9 +129,9 @@ public class NewsFeedActivity extends AbstractActivity implements NewsFeedView, 
     public void setUpDrawer()
     {
         toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.setTitle("Happy mama");     // Replace with string from resources?
+        toolbar.setTitle("Прямой эфир");     // Replace with string from resources?
         setSupportActionBar(toolbar);
-        toolbar.setTitleTextColor(getResources().getColor(android.R.color.white));
+        toolbar.setTitleTextColor(getResources().getColor(R.color.drawer_primaryTextColor));
         AccountHeader headerResult = new AccountHeaderBuilder()
                 .withActivity(this)
                 .addProfiles(

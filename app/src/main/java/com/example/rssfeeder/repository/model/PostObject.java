@@ -6,7 +6,9 @@ import android.widget.EditText;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 /**
  * Created by Андрей on 04.07.2016.
@@ -23,6 +25,7 @@ public class PostObject
     @SerializedName("user") private User user;
     @SerializedName("comments_array") private CommentObject[] postComments;
     @SerializedName("images") private ImageObject[] imagesArray;
+    @SerializedName("created") private String timeCreated;
 //    @SerializedName("comments_array") private ArrayList<S>
     public int getId()
     {
@@ -96,5 +99,18 @@ public class PostObject
 
     public void setImagesArray(ImageObject[] imagesArray) {
         this.imagesArray = imagesArray;
+    }
+
+    public String getTimeCreated()
+    {
+        long dv = Long.valueOf(timeCreated)*1000;// its need to be in milisecond
+        Date df = new java.util.Date(dv);
+        String vv = new SimpleDateFormat("dd.MM.yyyy hh:mm a").format(df);
+        return vv;
+    }
+
+    public void setTimeCreated(String timeCreated)
+    {
+        this.timeCreated = timeCreated;
     }
 }

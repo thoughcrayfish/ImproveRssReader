@@ -22,7 +22,8 @@ public class FeedAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
     List<PostObject> objects;
     Context mContext;
     String postTypeString;
-
+    public static final int TYPE_TEXT_POST = 0;
+    public static final int TYPE_GALLERY_POST = 1;
     RecyclerView.ViewHolder viewHolder;
     private static LayoutInflater inflater = null;
 
@@ -38,10 +39,11 @@ public class FeedAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
             Glide.with(mContext)
                     .load(postObject.getUser().getUserPicture())
                     .centerCrop()
-                    .placeholder(R.drawable.ic_testlogo)
+                    .placeholder(R.drawable.ic_imageplaceholder)
                     .transform(new CircleTransform(mContext))
                     .into(((FeedViewHolder) customViewHolder).userPicture);
             // footer content
+            ((FeedViewHolder) customViewHolder).dateCreated.setText(postObject.getTimeCreated());
             ((FeedViewHolder) customViewHolder).likesQuantity.setText(postObject.getLikeQuantity());
             ((FeedViewHolder) customViewHolder).commentsQuantity.setText(postObject.getCommentQuantity());
             // text post content
@@ -50,7 +52,11 @@ public class FeedAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
         }
         if (customViewHolder instanceof FeedGalleryViewHolder)
         {
+            // text post content
+            ((FeedGalleryViewHolder) customViewHolder).title.setText(postObject.getTitle());
+            ((FeedGalleryViewHolder) customViewHolder).detail.setText(postObject.getDetail());
             // footer content
+            ((FeedGalleryViewHolder) customViewHolder).dateCreated.setText(postObject.getTimeCreated());
             ((FeedGalleryViewHolder) customViewHolder).likesQuantity.setText(postObject.getLikeQuantity());
             ((FeedGalleryViewHolder) customViewHolder).commentsQuantity.setText(postObject.getCommentQuantity());
             // header content
@@ -62,7 +68,7 @@ public class FeedAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
             Glide.with(mContext)
                     .load(postObject.getUser().getUserPicture())
                     .fitCenter()
-                    .placeholder(R.drawable.ic_testlogo)
+                    .placeholder(R.drawable.ic_imageplaceholder)
                     .transform(new CircleTransform(mContext))
                     .into(((FeedGalleryViewHolder) customViewHolder).userPicture);
             if (imagesArray != null && imagesArray.length == 1)
@@ -72,7 +78,7 @@ public class FeedAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
                 Glide.with(mContext)
                         .load(imageURL)
                         .centerCrop()
-                        .placeholder(R.drawable.ic_testlogo)
+                        .placeholder(R.drawable.ic_imageplaceholder)
                         .into(((FeedGalleryViewHolder) customViewHolder).galleryPostOnePicture);
             }
             if (imagesArray != null && imagesArray.length == 2)
@@ -82,12 +88,12 @@ public class FeedAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
                 Glide.with(mContext)
                         .load(imageURL1)
                         .fitCenter()
-                        .placeholder(R.drawable.ic_testlogo)
+                        .placeholder(R.drawable.ic_imageplaceholder)
                         .into(((FeedGalleryViewHolder) customViewHolder).galleryPostTwoPictures_1);
                 Glide.with(mContext)
                         .load(imageURL2)
                         .fitCenter()
-                        .placeholder(R.drawable.ic_testlogo)
+                        .placeholder(R.drawable.ic_imageplaceholder)
                         .into(((FeedGalleryViewHolder) customViewHolder).galleryPostTwoPictures_2);
             }
             if (imagesArray != null && imagesArray.length > 2)
@@ -96,40 +102,52 @@ public class FeedAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
                 ((FeedGalleryViewHolder) customViewHolder).rootMorePictures.setVisibility(View.VISIBLE);
                 Glide.with(mContext)
                         .load(imageURL1)
-                        .fitCenter()
-                        .placeholder(R.drawable.ic_testlogo)
+                        .centerCrop()
+                        .placeholder(R.drawable.ic_imageplaceholder)
                         .into(((FeedGalleryViewHolder) customViewHolder).galleryPostThreePictures_1);
                 Glide.with(mContext)
                         .load(imageURL2)
-                        .fitCenter()
-                        .placeholder(R.drawable.ic_testlogo)
+                        .centerCrop()
+                        .placeholder(R.drawable.ic_imageplaceholder)
                         .into(((FeedGalleryViewHolder) customViewHolder).galleryPostThreePictures_2);
                 Glide.with(mContext)
                         .load(imageURL3)
                         .fitCenter()
-                        .placeholder(R.drawable.ic_testlogo)
+                        .placeholder(R.drawable.ic_imageplaceholder)
                         .into(((FeedGalleryViewHolder) customViewHolder).galleryPostThreePictures_3);
             }
         }
     }
 
-    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i)
+    @Override
+    public int getItemViewType(int position)
+    {
+        int pos = TYPE_TEXT_POST;
+        PostObject postObject = objects.get(position);
+        postTypeString = postObject.getType();
+        if (postTypeString.equals("text")) pos = TYPE_TEXT_POST;
+        if (postTypeString.equals("gallery")) pos = TYPE_GALLERY_POST;
+
+        return pos;
+    }
+
+    @Override
+    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType)
     {
         View view;
-        PostObject postObject = objects.get(i);
-        postTypeString = postObject.getType();
 
-        if (postTypeString.equals("text"))
+//        PostObject postObject = objects.get(i);
+        switch (viewType)
         {
-            view = inflater.inflate(R.layout.postobject_textcontent, viewGroup, false);
-            viewHolder = new FeedViewHolder(view);
+            case TYPE_TEXT_POST:
+                view = inflater.inflate(R.layout.postobject_textcontent, viewGroup, false);
+                viewHolder = new FeedViewHolder(view);
+                return viewHolder;
+            case TYPE_GALLERY_POST:
+                view = inflater.inflate(R.layout.postobject_gallerycontent, viewGroup, false);
+                viewHolder = new FeedGalleryViewHolder(view);
+                return viewHolder;
         }
-        else if (postTypeString.equals("gallery"))
-        {
-            view = inflater.inflate(R.layout.postobject_gallerycontent, viewGroup, false);
-            viewHolder = new FeedGalleryViewHolder(view);
-        }
-
         return viewHolder;
     }
 

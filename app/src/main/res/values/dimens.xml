@@ -25,6 +25,7 @@
     <dimen name="textView_userName_marginLeft">25dp</dimen>
     <dimen name="postobject_header_marginTop">20dp</dimen>
     <dimen name="linearLayout_galleryPost_height">200dp</dimen>
+    <dimen name="textSize_footerCreatedDate">10sp</dimen>
 
 
 </resources>

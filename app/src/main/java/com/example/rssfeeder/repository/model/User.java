@@ -2,6 +2,9 @@ package com.example.rssfeeder.repository.model;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 /**
  * Created by Андрей on 15.07.2016.
  */
@@ -13,6 +16,7 @@ public class User
     @SerializedName("firstname") private String firstName;
     @SerializedName("secondname") private String secondName;
     @SerializedName("avatar_90x90") private String userPicture;
+
 //    @SerializedName("pregnant") private boolean pregnant;
 //    @SerializedName("planning") private boolean plannin;
 //    @SerializedName("online") private boolean isOnline;
@@ -61,8 +65,8 @@ public class User
         return userPicture;
     }
 
-    public void setUserPicture(String userPicture) {
+    public void setUserPicture(String userPicture)
+    {
         this.userPicture = userPicture;
     }
-
- }
+}

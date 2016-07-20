@@ -20,6 +20,7 @@ public class FeedViewHolder extends RecyclerView.ViewHolder
     protected TextView userFirstName;
     protected TextView pregnancyDuration;
     protected ImageView userPicture;
+    protected TextView dateCreated;
 
     public FeedViewHolder(View view)
     {
@@ -32,5 +33,6 @@ public class FeedViewHolder extends RecyclerView.ViewHolder
         this.userFirstName = (TextView) view.findViewById(R.id.textView_header_userName);
         this.pregnancyDuration = (TextView) view.findViewById(R.id.textView_header_pregnancyDuration);
         this.userPicture = (ImageView) view.findViewById(R.id.imageView_header_userPic);
+        this.dateCreated = (TextView) view.findViewById(R.id.textView_header_datePublished);
     }
 }

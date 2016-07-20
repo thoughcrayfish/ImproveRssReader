@@ -12,6 +12,26 @@
 
         <include layout="@layout/postobject_header" />
 
+        <TextView
+            android:id="@+id/textView_feedGalleryPostTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:padding="@dimen/row_padding"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            android:textColor="@color/text_accent"
+            tools:text="Saddasdasdaasdasad" />
+
+        <TextView
+            android:id="@+id/textView_feedGalleryPostDetail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="top"
+            android:maxLines="10"
+            android:padding="@dimen/row_padding"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            tools:text="Saddasdasdaasdasad" />
+
         <LinearLayout
             android:id="@+id/linearLayout_onePicture"
             android:layout_width="match_parent"
@@ -32,7 +52,8 @@
             android:id="@+id/linearLayout_twoPictures"
             android:layout_width="match_parent"
             android:layout_height="@dimen/linearLayout_galleryPost_height"
-            android:visibility="gone">
+            android:visibility="gone"
+            >
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -41,7 +62,7 @@
 
                 <ImageView
                     android:id="@+id/imageView_twoPictures_1"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="0.5"
                     android:padding="@dimen/row_padding"
@@ -49,7 +70,7 @@
 
                 <ImageView
                     android:id="@+id/imageView_twoPictures_2"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="0.5"
                     android:padding="@dimen/row_padding"
@@ -63,7 +84,8 @@
             android:layout_height="@dimen/linearLayout_galleryPost_height"
             android:layout_weight="1"
             android:orientation="horizontal"
-            android:visibility="gone">
+            android:visibility="gone"
+            >
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -74,7 +96,7 @@
                 <ImageView
                     android:id="@+id/imageView_threePictures_1"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_weight="0.5"
                     android:padding="@dimen/row_padding"
                     tools:src="@drawable/ic_testlogo" />
@@ -82,7 +104,7 @@
                 <ImageView
                     android:id="@+id/imageView_threePictures_2"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_weight="0.5"
                     android:padding="@dimen/row_padding"
                     tools:src="@drawable/ic_testlogo" />

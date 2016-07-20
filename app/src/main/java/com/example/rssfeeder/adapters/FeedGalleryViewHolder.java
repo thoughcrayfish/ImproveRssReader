@@ -13,6 +13,8 @@ import com.example.rssfeeder.R;
  */
 public class FeedGalleryViewHolder extends RecyclerView.ViewHolder
 {
+    protected TextView title;
+    protected TextView detail;
     protected TextView likesQuantity;
     protected TextView commentsQuantity;
     protected TextView userFirstName;
@@ -28,11 +30,14 @@ public class FeedGalleryViewHolder extends RecyclerView.ViewHolder
     protected LinearLayout rootOnePicture;
     protected LinearLayout rootTwoPictures;
     protected LinearLayout rootMorePictures;
+    protected TextView dateCreated;
 
         public FeedGalleryViewHolder(View view)
         {
             super(view);
 
+            this.title = (TextView) view.findViewById(R.id.textView_feedGalleryPostTitle);
+            this.detail = (TextView) view.findViewById(R.id.textView_feedGalleryPostDetail);
             this.galleryPostOnePicture = (ImageView) view.findViewById(R.id.imageView_onePicture);
             this.galleryPostTwoPictures_1 = (ImageView) view.findViewById(R.id.imageView_twoPictures_1);
             this.galleryPostTwoPictures_2 = (ImageView) view.findViewById(R.id.imageView_twoPictures_2);
@@ -49,6 +54,7 @@ public class FeedGalleryViewHolder extends RecyclerView.ViewHolder
             this.rootOnePicture = (LinearLayout) view.findViewById(R.id.linearLayout_onePicture);
             this.rootTwoPictures = (LinearLayout) view.findViewById(R.id.linearLayout_twoPictures);
             this.rootMorePictures = (LinearLayout) view.findViewById(R.id.linearLayout_threePictures);
+            this.dateCreated = (TextView) view.findViewById(R.id.textView_header_datePublished);
         }
 
 }
