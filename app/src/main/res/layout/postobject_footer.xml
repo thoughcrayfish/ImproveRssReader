@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/postObject_footer_height">
+
+
+    <TextView
+        android:id="@+id/editText_footer_likeQuantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/postObject_like_marginLeft"
+        android:layout_marginStart="@dimen/postObject_like_marginLeft"
+        android:layout_toEndOf="@+id/imageView2"
+        android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+        tools:text="35" />
+
+
+    <TextView
+        android:id="@+id/editText_footer_commentsQuantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/postObject_like_marginLeft"
+        android:layout_toEndOf="@+id/imageView"
+        android:drawablePadding="@dimen/postObject_like_marginLeft"
+        android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+        tools:text="35" />
+
+    <ImageView
+        android:id="@+id/imageView_footer_more"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/editText_footer_commentsQuantity"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/abc_ic_menu_overflow_material" />
+
+    <TextView
+
+        android:id="@+id/textView_header_datePublished"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="29dp"
+        android:text="30 минут"
+        android:textColor="#a0919191"
+        tools:text="30 минут назад" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="@dimen/imageView_footer_size"
+        android:layout_height="@dimen/imageView_footer_size"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="10dp"
+        android:layout_toEndOf="@+id/editText_footer_likeQuantity"
+        android:src="@drawable/ic_chat_bubble_black_24dp"
+        android:tint="#a26e6e6e" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="@dimen/imageView_footer_size"
+        android:layout_height="@dimen/imageView_footer_size"
+        android:layout_alignParentStart="true"
+
+        android:layout_centerVertical="true"
+        android:layout_marginStart="10dp"
+        android:src="@drawable/ic_likeinactive" />
+
+</RelativeLayout>

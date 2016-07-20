@@ -1,0 +1,102 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <include layout="@layout/postobject_header" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout_onePicture"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/linearLayout_galleryPost_height"
+            android:layout_weight="1"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/imageView_onePicture"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:padding="@dimen/row_padding"
+                tools:src="@drawable/ic_testlogo" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout_twoPictures"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/linearLayout_galleryPost_height"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:id="@+id/imageView_twoPictures_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:padding="@dimen/row_padding"
+                    tools:src="@drawable/ic_testlogo" />
+
+                <ImageView
+                    android:id="@+id/imageView_twoPictures_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:padding="@dimen/row_padding"
+                    tools:src="@drawable/ic_testlogo" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout_threePictures"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/linearLayout_galleryPost_height"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/imageView_threePictures_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:padding="@dimen/row_padding"
+                    tools:src="@drawable/ic_testlogo" />
+
+                <ImageView
+                    android:id="@+id/imageView_threePictures_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:padding="@dimen/row_padding"
+                    tools:src="@drawable/ic_testlogo" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/imageView_threePictures_3"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:padding="@dimen/row_padding"
+                tools:src="@drawable/ic_testlogo" />
+        </LinearLayout>
+
+        <include layout="@layout/postobject_footer" />
+    </LinearLayout>
+</RelativeLayout>

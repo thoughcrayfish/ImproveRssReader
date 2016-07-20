@@ -1,4 +1,4 @@
-package com.example.rssfeeder.repository.api.requests;
+package com.example.rssfeeder.repository.api;
 
 import com.android.volley.NetworkResponse;
 import com.android.volley.ParseError;

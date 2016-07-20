@@ -1,8 +1,10 @@
 package com.example.rssfeeder.ui.newsFeed;
 
 import com.android.volley.VolleyError;
+import com.example.rssfeeder.repository.api.BroadcastObject;
 import com.example.rssfeeder.repository.api.Urls;
-import com.example.rssfeeder.repository.model.RssItem;
+import com.example.rssfeeder.repository.model.PostObject;
+import com.google.gson.Gson;
 
 import java.util.List;
 
@@ -27,19 +29,18 @@ public class NewsFeedPresenterImp implements NewsFeedPresenter, NewsFeedInteract
         {
             // show progress
             view.showProgress();
-            interactor.getRssList(position, Urls.RssUrl, this);
-
+            interactor.getRssList(position, this);
         }
     }
 
     @Override
-    public void onSuccess(List<RssItem> result)
+    public void onSuccess(BroadcastObject result)
     {
         // hide progress
         if (view != null)
         {
             view.hideProgress();
-            view.loadList(result);
+            view.loadList(result.getPostObjects());
         }
 
     }

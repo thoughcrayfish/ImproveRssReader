@@ -4,7 +4,7 @@ import com.android.volley.Request;
 
 import com.example.rssfeeder.repository.api.RssVolley;
 import com.example.rssfeeder.repository.api.Urls;
-import com.example.rssfeeder.repository.api.requests.JsonObjectRequest;
+import com.example.rssfeeder.repository.api.JsonObjectRequest;
 import com.example.rssfeeder.repository.model.LoginUser;
 import com.google.gson.Gson;
 

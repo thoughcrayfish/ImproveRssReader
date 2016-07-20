@@ -1,6 +1,6 @@
 package com.example.rssfeeder.ui.newsFeed;
 
-import com.example.rssfeeder.repository.model.RssItem;
+import com.example.rssfeeder.repository.model.PostObject;
 
 import java.util.List;
 
@@ -9,6 +9,6 @@ import java.util.List;
  */
 public interface NewsFeedView
 {
-    public void loadList(List<RssItem> feedList);
+    public void loadList(List<PostObject> result);
 
 }

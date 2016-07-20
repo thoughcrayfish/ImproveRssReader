@@ -14,4 +14,9 @@
     <color name="backgroundColor">#424242</color>
     <color name="transparent">#00000000</color>
     <color name="progressBarBackground">#b4000000</color>
+
+    <color name="drawer_backgroundColor">#fff3d3</color>
+    <color name="drawer_divider">#e3d8ba</color>
+    <color name="text_accent">#2cabd9</color>
+    <color name="drawer_primaryTextColor">#3b2c17</color>
 </resources>

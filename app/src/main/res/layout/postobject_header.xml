@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="@dimen/postobject_header_marginTop">
+
+    <ImageView
+        android:id="@+id/imageView_header_userPic"
+
+        android:layout_width="@dimen/postobject_header_userPic_size"
+        android:layout_height="@dimen/postobject_header_userPic_size"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/postobject_userPic_marginLeft"
+        android:scaleType="centerInside"
+        tools:src="@android:drawable/ic_menu_my_calendar" />
+
+    <ImageView
+        android:id="@+id/imageView_header_like"
+        android:layout_width="@dimen/postobject_header_likeSize"
+        android:layout_height="@dimen/postobject_header_likeSize"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="20dp"
+        android:src="@drawable/ic_likeinactive" />
+
+    <TextView
+
+        android:id="@+id/textView_header_userName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/imageView_header_userPic"
+        android:layout_marginLeft="@dimen/textView_userName_marginLeft"
+        android:layout_toLeftOf="@id/imageView_header_like"
+        android:layout_toRightOf="@+id/imageView_header_userPic"
+        android:text="Елена Ерохина"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        tools:text="Елена Ерохина" />
+
+    <TextView
+        android:id="@+id/textView_header_pregnancyDuration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView_header_userName"
+        android:layout_below="@+id/textView_header_userName"
+        tools:text="90 лет" />
+
+    <TextView
+        android:id="@+id/textView_header_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView_header_userName"
+        android:layout_marginStart="19dp"
+        android:layout_toRightOf="@+id/textView_header_pregnancyDuration"
+        tools:text="Магадан" />
+
+
+</RelativeLayout>

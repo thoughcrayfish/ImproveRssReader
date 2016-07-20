@@ -11,4 +11,18 @@
     <string name="login_fail">Invalid Login/password</string>
     <string name="connection_error_detail">Unable to connect</string>
     <string name="alert_newRss">Add New RSS source</string>
+    <string name="title_activity_test">test</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+
+    <string name="action_settings">Settings</string>
+    <string-array name="drawer_navigation_list">
+         <item>Календарь</item>
+         <item>Прямой эфир</item>
+         <item>Сообщества</item>
+         <item>Найти подруг</item>
+         <item>Настройки</item>
+    </string-array>
 </resources>

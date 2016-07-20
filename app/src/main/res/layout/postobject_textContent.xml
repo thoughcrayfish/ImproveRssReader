@@ -1,33 +1,44 @@
-<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="80dp"
+    android:layout_height="wrap_content"
     android:layout_margin="8dp">
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
 
-        android:layout_height="@dimen/row_height">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <include layout="@layout/postobject_header" />
+
 
         <TextView
-            android:id="@+id/textView_feedTitle"
+            android:id="@+id/textView_feedTextPostTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:maxLines="1"
             android:padding="@dimen/row_padding"
             android:textAppearance="@style/TextAppearance.AppCompat.Title"
-            tools:text="Saddasdasdaasdasad"/>
+            android:textColor="@color/text_accent"
+            tools:text="Saddasdasdaasdasad" />
+
         <TextView
-            android:id="@+id/textView_feedDetail"
+            android:id="@+id/textView_feedTextPostDetail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="top"
-            android:maxLines="1"
+            android:maxLines="10"
             android:padding="@dimen/row_padding"
             android:textAppearance="@style/TextAppearance.AppCompat.Small"
-            tools:text="Saddasdasdaasdasad"/>
+            tools:text="Saddasdasdaasdasad" />
+
+
+        <include layout="@layout/postobject_footer" />
 
     </LinearLayout>
-</android.support.v7.widget.CardView>
+
+
+</RelativeLayout>
