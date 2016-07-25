@@ -21,7 +21,6 @@ import com.example.rssfeeder.repository.model.PostObject;
 import com.example.rssfeeder.utils.AlertUtils;
 import com.example.rssfeeder.utils.DividerItemDecoration;
 import com.example.rssfeeder.utils.OnScrollListener;
-import com.example.rssfeeder.utils.VerticalSpaceItemDecoration;
 import com.mikepenz.materialdrawer.AccountHeader;
 import com.mikepenz.materialdrawer.AccountHeaderBuilder;
 import com.mikepenz.materialdrawer.Drawer;
@@ -48,11 +47,11 @@ public class NewsFeedActivity extends AbstractActivity implements NewsFeedView, 
     int lastItem = 0;
     private NewsFeedPresenterImp presenter;
     final Context context = this;
-    PrimaryDrawerItem item1 = new SecondaryDrawerItem().withIdentifier(1).withName("Календарь");
-    PrimaryDrawerItem item2 = new SecondaryDrawerItem().withIdentifier(2).withName("Прямой эфир");
-    PrimaryDrawerItem item3 = new SecondaryDrawerItem().withIdentifier(3).withName("Сообщества");
-    PrimaryDrawerItem item4 = new SecondaryDrawerItem().withIdentifier(4).withName("Найти подруг");
-    PrimaryDrawerItem item5 = new SecondaryDrawerItem().withIdentifier(5).withName("Settings");
+    PrimaryDrawerItem item1 = new PrimaryDrawerItem().withIdentifier(1).withName("Календарь");
+    PrimaryDrawerItem item2 = new PrimaryDrawerItem().withIdentifier(2).withName("Прямой эфир");
+    PrimaryDrawerItem item3 = new PrimaryDrawerItem().withIdentifier(3).withName("Сообщества");
+    PrimaryDrawerItem item4 = new PrimaryDrawerItem().withIdentifier(4).withName("Найти подруг");
+    PrimaryDrawerItem item5 = new PrimaryDrawerItem().withIdentifier(5).withName("Settings");
     private String[] drawerList;
     private Toolbar toolbar;
     // ButterKnife
@@ -63,7 +62,7 @@ public class NewsFeedActivity extends AbstractActivity implements NewsFeedView, 
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_feed);
+        setContentView(R.layout.feed_activity);
         ButterKnife.bind(this);
         setUpDrawer();
 
@@ -135,11 +134,13 @@ public class NewsFeedActivity extends AbstractActivity implements NewsFeedView, 
         AccountHeader headerResult = new AccountHeaderBuilder()
                 .withActivity(this)
                 .addProfiles(
-                        new ProfileDrawerItem().withName("Елена Ерохина").withEmail("erohina@narod.ru").withIcon(getResources().getDrawable(R.drawable.ic_menu_camera))
+                        new ProfileDrawerItem().withName("Елена Ерохина").withEmail("erohina@narod.ru").withIcon(getResources().getDrawable(R.drawable.ic_autorization))
                 )
-                .withOnAccountHeaderListener(new AccountHeader.OnAccountHeaderListener() {
+                .withOnAccountHeaderListener(new AccountHeader.OnAccountHeaderListener()
+                {
                     @Override
-                    public boolean onProfileChanged(View view, IProfile profile, boolean currentProfile) {
+                    public boolean onProfileChanged(View view, IProfile profile, boolean currentProfile)
+                    {
                         return false;
                     }
                 })
@@ -150,13 +151,13 @@ public class NewsFeedActivity extends AbstractActivity implements NewsFeedView, 
                 .withToolbar(toolbar)
                 .withAccountHeader(headerResult)
                 .addDrawerItems(
-                        item1,
+                        item1.withIcon(R.drawable.ic_calendar),
                         new DividerDrawerItem(),
-                        item2,
+                        item2.withIcon(R.drawable.ic_rss_drawer),
                         new DividerDrawerItem(),
-                        item3,
+                        item3.withIcon(R.drawable.ic_communities),
                         new DividerDrawerItem(),
-                        item4,
+                        item4.withIcon(R.drawable.ic_findfriends),
                         new DividerDrawerItem(),
                         item5,
                         new DividerDrawerItem()

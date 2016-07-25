@@ -42,7 +42,7 @@ public class LoginViewImpl extends AbstractActivity implements LoginView
     {
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.login_activity);
 
         ButterKnife.bind(this);
         hideProgress();

@@ -16,14 +16,14 @@
         android:scaleType="centerInside"
         tools:src="@android:drawable/ic_menu_my_calendar" />
 
-    <ImageView
+    <android.support.v7.widget.AppCompatButton
         android:id="@+id/imageView_header_like"
         android:layout_width="@dimen/postobject_header_likeSize"
         android:layout_height="@dimen/postobject_header_likeSize"
         android:layout_alignParentEnd="true"
         android:layout_centerVertical="true"
-        android:layout_marginEnd="20dp"
-        android:src="@drawable/ic_likeinactive" />
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/ic_like_inactive" />
 
     <TextView
 

@@ -30,13 +30,13 @@
 
     <ImageView
         android:id="@+id/imageView_footer_more"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="@dimen/postObject_optionsButtonSIze"
+        android:layout_height="@dimen/postObject_optionsButtonSIze"
+        android:layout_marginRight="10dp"
         android:layout_alignParentEnd="true"
-        android:layout_alignTop="@+id/editText_footer_commentsQuantity"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:src="@drawable/abc_ic_menu_overflow_material" />
+        android:src="@drawable/ic_post_options" />
 
     <TextView
 
@@ -55,9 +55,9 @@
         android:layout_width="@dimen/imageView_footer_size"
         android:layout_height="@dimen/imageView_footer_size"
         android:layout_centerVertical="true"
-        android:layout_marginStart="10dp"
+        android:layout_marginStart="20dp"
         android:layout_toEndOf="@+id/editText_footer_likeQuantity"
-        android:src="@drawable/ic_chat_bubble_black_24dp"
+        android:src="@drawable/ic_chat_bubble"
         android:tint="#a26e6e6e" />
 
     <ImageView
@@ -68,6 +68,6 @@
 
         android:layout_centerVertical="true"
         android:layout_marginStart="10dp"
-        android:src="@drawable/ic_likeinactive" />
+        android:src="@drawable/ic_like_amount" />
 
 </RelativeLayout>

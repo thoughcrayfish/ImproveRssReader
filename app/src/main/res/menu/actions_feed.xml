@@ -6,12 +6,12 @@
         android:id="@+id/action_search"
         android:orderInCategory="100"
         android:title=""
-        android:icon="@drawable/ic_search_black_24dp"
+        android:icon="@drawable/ic_search"
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/action_filter"
         android:orderInCategory="100"
         android:title=""
-        android:icon="@drawable/ic_menu_manage"
+        android:icon="@drawable/ic_filter"
         app:showAsAction="ifRoom" />
 </menu>

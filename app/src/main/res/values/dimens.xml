@@ -21,11 +21,12 @@
     <dimen name="postobject_header_userPic_size">50dp</dimen>
     <dimen name="postobject_header_likeMarginRight">10dp</dimen>
     <dimen name="postobject_header_likeSize">35dp</dimen>
-    <dimen name="imageView_footer_size">23dp</dimen>
+    <dimen name="imageView_footer_size">18dp</dimen>
     <dimen name="textView_userName_marginLeft">25dp</dimen>
     <dimen name="postobject_header_marginTop">20dp</dimen>
     <dimen name="linearLayout_galleryPost_height">200dp</dimen>
     <dimen name="textSize_footerCreatedDate">10sp</dimen>
+    <dimen name="postObject_optionsButtonSIze">25dp</dimen>
 
 
 </resources>

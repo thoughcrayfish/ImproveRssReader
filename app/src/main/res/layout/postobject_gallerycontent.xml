@@ -82,15 +82,15 @@
             android:id="@+id/linearLayout_threePictures"
             android:layout_width="match_parent"
             android:layout_height="@dimen/linearLayout_galleryPost_height"
-            android:layout_weight="1"
-            android:orientation="horizontal"
             android:visibility="gone"
+            android:orientation="horizontal"
+
             >
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
+                android:layout_weight="0.4"
                 android:orientation="vertical">
 
                 <ImageView
@@ -99,6 +99,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="0.5"
                     android:padding="@dimen/row_padding"
+
                     tools:src="@drawable/ic_testlogo" />
 
                 <ImageView
@@ -108,15 +109,42 @@
                     android:layout_weight="0.5"
                     android:padding="@dimen/row_padding"
                     tools:src="@drawable/ic_testlogo" />
+
             </LinearLayout>
 
-            <ImageView
-                android:id="@+id/imageView_threePictures_3"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:padding="@dimen/row_padding"
-                tools:src="@drawable/ic_testlogo" />
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <!--<TextView-->
+                    <!--android:layout_width="80dp"-->
+                    <!--android:layout_height="40dp"-->
+                    <!--android:id="@+id/textView_morePhotos"-->
+                    <!--android:textAppearance="@style/TextAppearance.AppCompat.Title"-->
+                    <!--android:text="10"-->
+                    <!--android:layout_alignParentTop="true"-->
+                    <!--android:layout_alignParentEnd="true"-->
+                    <!--android:paddingRight="12dp"-->
+                    <!--android:gravity="center|right" />-->
+                <!--<ImageView-->
+
+                    <!--android:layout_width="80dp"-->
+                    <!--android:layout_height="40dp"-->
+                    <!--android:src="@drawable/ic_more_photos"-->
+                    <!--android:id="@+id/imageView_morePhotos"-->
+                    <!--android:layout_alignParentRight="true"-->
+                    <!--android:contentDescription="123" />-->
+
+                <ImageView
+                    android:id="@+id/imageView_threePictures_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+
+                    android:padding="@dimen/row_padding"
+                    tools:src="@drawable/ic_testlogo" />
+
+            </RelativeLayout>
         </LinearLayout>
 
         <include layout="@layout/postobject_footer" />
