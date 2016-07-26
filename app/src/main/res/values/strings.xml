@@ -25,4 +25,12 @@
          <item>Найти подруг</item>
          <item>Настройки</item>
     </string-array>
+
+    <string-array name="filter_options">
+        <item>First option</item>
+        <item>Second option</item>
+        <item>Third option</item>
+        <item>Fourth option</item>
+        <item>Fifth option</item>
+    </string-array>
 </resources>

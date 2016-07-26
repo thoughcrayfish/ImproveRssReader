@@ -8,9 +8,11 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.AccelerateInterpolator;
 import android.view.animation.DecelerateInterpolator;
+import android.widget.Button;
 import android.widget.ProgressBar;
 
 
@@ -36,6 +38,7 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 /**
  * Created by Андрей on 04.07.2016.
@@ -72,14 +75,30 @@ public class NewsFeedActivity extends AbstractActivity implements NewsFeedView, 
         // presenter
         presenter = new NewsFeedPresenterImp(this);
         presenter.getRssList(lastItem);
-
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
+    public boolean onCreateOptionsMenu(Menu menu)
+    {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.actions_feed, menu);
         return true;
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item)
+    {
+        // Handle item selection
+        switch (item.getItemId())
+        {
+            case R.id.action_filter:
+                AlertUtils.alertSingleChoice(context, "Choose One", getResources().getStringArray(R.array.filter_options));
+                return true;
+            case R.id.action_search:
+
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
     public void loadList(List<PostObject> result)
     {
@@ -173,4 +192,5 @@ public class NewsFeedActivity extends AbstractActivity implements NewsFeedView, 
                 })
                 .build();
     }
+
 }

@@ -28,15 +28,17 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Caption"
         tools:text="35" />
 
-    <ImageView
-        android:id="@+id/imageView_footer_more"
-        android:layout_width="@dimen/postObject_optionsButtonSIze"
-        android:layout_height="@dimen/postObject_optionsButtonSIze"
+    <Button
+        android:id="@+id/button_footer_more"
+        android:layout_width="30dp"
+        android:layout_height="8dp"
         android:layout_marginRight="10dp"
         android:layout_alignParentEnd="true"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:src="@drawable/ic_post_options" />
+        android:translationZ="10dp"
+        android:background="?attr/selectableItemBackground"
+        android:foreground="@drawable/ic_post_options" />
 
     <TextView
 

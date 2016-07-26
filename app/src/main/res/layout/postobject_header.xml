@@ -16,8 +16,8 @@
         android:scaleType="centerInside"
         tools:src="@android:drawable/ic_menu_my_calendar" />
 
-    <android.support.v7.widget.AppCompatButton
-        android:id="@+id/imageView_header_like"
+    <Button
+        android:id="@+id/button_header_like"
         android:layout_width="@dimen/postobject_header_likeSize"
         android:layout_height="@dimen/postobject_header_likeSize"
         android:layout_alignParentEnd="true"
@@ -32,7 +32,7 @@
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/imageView_header_userPic"
         android:layout_marginLeft="@dimen/textView_userName_marginLeft"
-        android:layout_toLeftOf="@id/imageView_header_like"
+        android:layout_toLeftOf="@id/button_header_like"
         android:layout_toRightOf="@+id/imageView_header_userPic"
         android:text="Елена Ерохина"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"

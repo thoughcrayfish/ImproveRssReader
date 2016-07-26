@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="8dp">
+
+    >
 
 
     <LinearLayout
@@ -34,6 +35,7 @@
             android:padding="@dimen/row_padding"
             android:textAppearance="@style/TextAppearance.AppCompat.Small"
             tools:text="Saddasdasdaasdasad" />
+
 
 
         <include layout="@layout/postobject_footer" />

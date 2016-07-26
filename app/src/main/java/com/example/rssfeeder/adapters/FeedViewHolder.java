@@ -2,6 +2,7 @@ package com.example.rssfeeder.adapters;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -21,7 +22,8 @@ public class FeedViewHolder extends RecyclerView.ViewHolder
     protected TextView pregnancyDuration;
     protected ImageView userPicture;
     protected TextView dateCreated;
-
+    protected Button buttonFooterMore;
+    protected Button buttonHeaderLike;
     public FeedViewHolder(View view)
     {
         super(view);
@@ -34,5 +36,7 @@ public class FeedViewHolder extends RecyclerView.ViewHolder
         this.pregnancyDuration = (TextView) view.findViewById(R.id.textView_header_pregnancyDuration);
         this.userPicture = (ImageView) view.findViewById(R.id.imageView_header_userPic);
         this.dateCreated = (TextView) view.findViewById(R.id.textView_header_datePublished);
+        this.buttonFooterMore = (Button) view.findViewById(R.id.button_footer_more);
+        this.buttonHeaderLike = (Button) view.findViewById(R.id.button_header_like);
     }
 }
