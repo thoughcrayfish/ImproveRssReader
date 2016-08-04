@@ -5,5 +5,11 @@ package com.example.rssfeeder.ui.newsFeedDetail;
  */
 public interface NewsFeedDetailInteractor
 {
+    interface onDetailGetListener
+    {
+        void onSuccess(/* feedDetailObject goes here */);
+        void onError(/* error goes here */);
+    }
 
+    void getFeedDetail(int position, onDetailGetListener listener);
 }

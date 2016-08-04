@@ -5,5 +5,8 @@ package com.example.rssfeeder.ui.newsFeedDetail;
  */
 public interface NewsFeedDetailView
 {
-
+    void showFeedDetail();
+    void showConnectionError();
+    void showError();
+    void updateFeedDetail();
 }

@@ -24,4 +24,22 @@ public class NewsFeedDetailActivity extends AbstractActivity implements NewsFeed
         String id = intent.getStringExtra("id");
         AlertUtils.showToast(NewsFeedDetailActivity.this, id, Toast.LENGTH_SHORT);
     }
+
+    @Override
+    public void showFeedDetail()
+    {
+
+    }
+
+    @Override
+    public void showConnectionError()
+    {
+
+    }
+
+    @Override
+    public void updateFeedDetail()
+    {
+
+    }
 }

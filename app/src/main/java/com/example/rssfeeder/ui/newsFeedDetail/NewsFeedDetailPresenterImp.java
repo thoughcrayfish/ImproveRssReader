@@ -6,4 +6,9 @@ package com.example.rssfeeder.ui.newsFeedDetail;
 public class NewsFeedDetailPresenterImp implements NewsFeedDetailPresenter
 {
 
+    @Override
+    public void showFeedDetail()
+    {
+        
+    }
 }

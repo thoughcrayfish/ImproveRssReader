@@ -6,4 +6,9 @@ package com.example.rssfeeder.ui.newsFeedDetail;
 public class NewsFeedDetailInteractorImp implements NewsFeedDetailInteractor
 {
 
+    @Override
+    public void getFeedDetail(int position, onDetailGetListener listener)
+    {
+
+    }
 }
