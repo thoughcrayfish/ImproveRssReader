@@ -9,6 +9,6 @@ public class NewsFeedDetailPresenterImp implements NewsFeedDetailPresenter
     @Override
     public void showFeedDetail()
     {
-        
+
     }
 }

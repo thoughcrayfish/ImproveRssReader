@@ -2,14 +2,8 @@ package com.example.rssfeeder.repository.api;
 
 import android.content.Context;
 
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.HttpHeaderParser;
 import com.example.rssfeeder.R;
 import com.example.rssfeeder.app.RssFeederApplication;
-import com.example.rssfeeder.repository.model.ErrorObject;
-import com.google.gson.Gson;
-
-import org.json.JSONObject;
 
 /**
  * Created by Андрей on 11.07.2016.

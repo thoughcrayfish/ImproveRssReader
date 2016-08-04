@@ -38,7 +38,7 @@ public abstract class AbstractActivity extends AppCompatActivity
 //    public void setContentView(int layoutResID)
 //    {
 //        LayoutInflater layoutInflater = getLayoutInflater();
-//        final View container = layoutInflater.inflate(R.layout.feed_activity, (ViewGroup) getWindow().getDecorView(), false);
+//        final View container = layoutInflater.inflate(R.layout.activity_news_feed, (ViewGroup) getWindow().getDecorView(), false);
 //        layoutInflater.inflate(layoutResID, (ViewGroup) container.findViewById(R.id.content_layout), true);
 //
 //        super.setContentView(container);

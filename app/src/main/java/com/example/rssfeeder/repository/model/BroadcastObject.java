@@ -1,4 +1,4 @@
-package com.example.rssfeeder.repository.api;
+package com.example.rssfeeder.repository.model;
 
 import com.example.rssfeeder.repository.model.CommentObject;
 import com.example.rssfeeder.repository.model.PostObject;

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="70dp"
@@ -12,16 +11,13 @@
         android:layout_width="@dimen/postobject_comment_avatar_width"
         android:layout_height="match_parent"
         android:layout_marginTop="@dimen/postobject_comment_avatar_margin_top"
-        android:src="@drawable/ic_people_outline_black_24dp" />
+        tools:src="@drawable/ic_people_outline_black_24dp" />
 
     <TextView
         android:id="@+id/textView_commentAuthor"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
-        android:layout_alignParentRight="false"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="@dimen/postObject_elements_left_margin"
+        android:layout_marginStart="@dimen/postObject_elements_left_start"
         android:layout_marginTop="@dimen/postobject_comment_title_margin_top"
         android:layout_toEndOf="@+id/imageView_commentAuthorImage"
         android:gravity="top"
@@ -29,12 +25,11 @@
         tools:text="adksjndkjasndkjsandkjan" />
 
     <TextView
-
         android:id="@+id/textView_commentBody"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView_commentAuthor"
-        android:layout_marginLeft="@dimen/postObject_elements_left_margin"
+        android:layout_marginStart="@dimen/postObject_elements_left_start"
         android:layout_toEndOf="@+id/imageView_commentAuthorImage"
         android:gravity="top"
         android:textAppearance="@style/TextAppearance.AppCompat.Small"

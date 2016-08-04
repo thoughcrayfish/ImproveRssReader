@@ -8,8 +8,6 @@ import com.example.rssfeeder.AbstractActivity;
 import com.example.rssfeeder.R;
 import com.example.rssfeeder.utils.AlertUtils;
 
-import butterknife.ButterKnife;
-
 /**
  * Created by Андрей on 02.08.2016.
  */
@@ -19,7 +17,7 @@ public class NewsFeedDetailActivity extends AbstractActivity implements NewsFeed
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.feed_postobject_detail);
+        setContentView(R.layout.activity_news_feed_detail);
         Intent intent = getIntent();
         String id = intent.getStringExtra("id");
         AlertUtils.showToast(NewsFeedDetailActivity.this, id, Toast.LENGTH_SHORT);

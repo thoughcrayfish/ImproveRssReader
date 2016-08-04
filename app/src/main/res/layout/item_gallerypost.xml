@@ -1,15 +1,10 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+<LinearLayout android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="8dp">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-        <include layout="@layout/feed_postobject_header" />
+        <include layout="@layout/item_news_header" />
 
         <TextView
             android:id="@+id/textView_feedGalleryPostTitle"
@@ -26,7 +21,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="top"
-            android:maxLines="10"
+            android:maxLines="16"
             android:padding="@dimen/row_padding"
             android:textAppearance="@style/TextAppearance.AppCompat.Small"
             tools:text="Saddasdasdaasdasad" />
@@ -34,14 +29,14 @@
         <LinearLayout
             android:id="@+id/linearLayout_onePicture"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:layout_weight="1"
             android:visibility="gone"
             tools:visibility="visible">
 
             <ImageView
                 android:id="@+id/imageView_onePicture"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="300dp"
                 android:layout_weight="1"
                 android:adjustViewBounds="true"
@@ -56,7 +51,7 @@
             tools:visibility="gone">
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1">
 
@@ -86,8 +81,7 @@
             android:orientation="horizontal"
             android:visibility="gone"
             tools:visibility="gone"
-
-            >
+            android:baselineAligned="false">
 
             <LinearLayout
                 android:layout_width="0dp"
@@ -101,9 +95,8 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="0.5"
                     android:adjustViewBounds="true"
-
-
-                    tools:src="@drawable/ic_testlogo" />
+                    tools:src="@drawable/ic_testlogo"
+                     />
 
                 <ImageView
                     android:id="@+id/imageView_threePictures_2"
@@ -111,7 +104,6 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="0.5"
                     android:adjustViewBounds="true"
-
                     tools:src="@drawable/ic_testlogo" />
 
             </LinearLayout>
@@ -120,21 +112,15 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.5">
-
-
                 <ImageView
                     android:id="@+id/imageView_threePictures_3"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:adjustViewBounds="true"
-
                     tools:src="@drawable/ic_testlogo" />
 
             </RelativeLayout>
         </LinearLayout>
 
-
-        <include layout="@layout/feed_postobject_footer" />
+        <include layout="@layout/item_news_footer" />
     </LinearLayout>
-
-</RelativeLayout>

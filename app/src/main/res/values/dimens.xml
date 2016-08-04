@@ -14,7 +14,7 @@
     <dimen name="nav_header_height">160dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
 
-    <dimen name="postObject_elements_left_margin">10dp</dimen>
+    <dimen name="postObject_elements_left_start">10dp</dimen>
     <dimen name="postobject_userpic_margin_left">7dp</dimen>
 
     <dimen name="postObject_optionsButtonSIze">25dp</dimen>
@@ -31,7 +31,7 @@
     <dimen name="postobject_header_like_margin_right">10dp</dimen>
     <dimen name="postobject_header_like_size">35dp</dimen>
     <dimen name="postobject_header_user_location_margin_start">19dp</dimen>
-    <dimen name="postobject_header_user_name_margin_left">25dp</dimen>
+    <dimen name="postobject_header_user_name_margin_start">25dp</dimen>
     <dimen name="postobject_header_userPic_size">50dp</dimen>
     <dimen name="postobject_header_margin_top">20dp</dimen>
     <dimen name="postobject_header_height">70dp</dimen>
@@ -40,10 +40,10 @@
     <dimen name="postobject_footer_imageView_size">18dp</dimen>
     <dimen name="postobject_footer_moreButton_width">20dp</dimen>
     <dimen name="postobject_footer_moreButton_height">5dp</dimen>
-    <dimen name="postobject_footer_moreButton_margin_right">10dp</dimen>
+    <dimen name="postobject_footer_moreButton_margin_end">10dp</dimen>
     <dimen name="postobject_footer_timeCreated_margin_start">29dp</dimen>
     <dimen name="postobject_footer_imageView_margin_start">20dp</dimen>
     <dimen name="postObject_footer_height">45dp</dimen>
-    <dimen name="postobject_footer_like_margin_left">5dp</dimen>
+    <dimen name="postobject_footer_like_margin_start">5dp</dimen>
     <dimen name="postobject_footer_timeCreated_text_size">10sp</dimen>
 </resources>

@@ -30,10 +30,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/imageView_header_userPic"
-        android:layout_marginLeft="@dimen/postobject_header_user_name_margin_left"
-        android:layout_toLeftOf="@id/button_header_like"
-        android:layout_toRightOf="@+id/imageView_header_userPic"
-        android:text="Елена Ерохина"
+        android:layout_marginStart="@dimen/postobject_header_user_name_margin_start"
+        android:layout_toStartOf="@id/button_header_like"
+        android:layout_toEndOf="@+id/imageView_header_userPic"
+        android:text=""
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         tools:text="Елена Ерохина" />
 
@@ -41,7 +41,7 @@
         android:id="@+id/textView_header_pregnancyDuration"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView_header_userName"
+        android:layout_alignStart="@+id/textView_header_userName"
         android:layout_below="@+id/textView_header_userName"
         tools:text="90 лет" />
 
@@ -51,7 +51,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView_header_userName"
         android:layout_marginStart="@dimen/postobject_header_user_location_margin_start"
-        android:layout_toRightOf="@+id/textView_header_pregnancyDuration"
+        android:layout_toEndOf="@+id/textView_header_pregnancyDuration"
         tools:text="Магадан" />
 
 

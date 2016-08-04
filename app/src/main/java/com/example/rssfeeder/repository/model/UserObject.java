@@ -16,8 +16,8 @@ public class UserObject
     @SerializedName("firstname") private String firstName;
     @SerializedName("secondname") private String secondName;
     @SerializedName("avatar_90x90") private String userPicture;
-    @SerializedName("pregnant") private int pregnant;
-    @SerializedName("planning") private int planning;
+//    @SerializedName("pregnant") private int pregnant;
+//    @SerializedName("planning") private int planning;
 
     public int getCurrentWeek()
     {

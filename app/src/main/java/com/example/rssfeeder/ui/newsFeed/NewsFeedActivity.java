@@ -1,12 +1,7 @@
 package com.example.rssfeeder.ui.newsFeed;
 
-import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -71,7 +66,7 @@ public class NewsFeedActivity extends AbstractActivity implements NewsFeedView, 
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.feed_activity);
+        setContentView(R.layout.activity_news_feed);
         ButterKnife.bind(this);
         setUpDrawer();
 

@@ -1,12 +1,7 @@
 package com.example.rssfeeder.ui.newsFeed;
 
 import com.android.volley.VolleyError;
-import com.example.rssfeeder.repository.api.BroadcastObject;
-import com.example.rssfeeder.repository.api.Urls;
-import com.example.rssfeeder.repository.model.PostObject;
-import com.google.gson.Gson;
-
-import java.util.List;
+import com.example.rssfeeder.repository.model.BroadcastObject;
 
 /**
  * Created by Андрей on 04.07.2016.

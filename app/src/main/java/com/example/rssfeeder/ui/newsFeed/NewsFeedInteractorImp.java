@@ -5,20 +5,14 @@ import com.android.volley.VolleyError;
 import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.example.rssfeeder.BuildConfig;
-import com.example.rssfeeder.repository.api.BroadcastObject;
+import com.example.rssfeeder.repository.model.BroadcastObject;
 import com.example.rssfeeder.repository.api.RssVolley;
 import com.example.rssfeeder.repository.api.Urls;
-import com.example.rssfeeder.repository.model.PostObject;
 import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.reflect.TypeToken;
 
 import org.json.JSONObject;
 
-import java.lang.reflect.Type;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 /**

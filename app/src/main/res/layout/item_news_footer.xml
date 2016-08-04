@@ -3,15 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="@dimen/postObject_footer_height">
-
-
     <TextView
         android:id="@+id/textView_footer_likeQuantity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
-        android:layout_marginLeft="@dimen/postobject_footer_like_margin_left"
-        android:layout_marginStart="@dimen/postobject_footer_like_margin_left"
+        android:layout_marginStart="@dimen/postobject_footer_like_margin_start"
         android:layout_toEndOf="@+id/imageView2"
         android:textAppearance="@style/TextAppearance.AppCompat.Caption"
         tools:text="35" />
@@ -22,9 +19,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
-        android:layout_marginLeft="@dimen/postobject_footer_like_margin_left"
+        android:layout_marginStart="@dimen/postobject_footer_like_margin_start"
         android:layout_toEndOf="@+id/imageView"
-        android:drawablePadding="@dimen/postobject_footer_like_margin_left"
+        android:drawablePadding="@dimen/postobject_footer_like_margin_start"
         android:textAppearance="@style/TextAppearance.AppCompat.Caption"
         tools:text="35" />
 
@@ -33,9 +30,8 @@
         android:layout_width="@dimen/postobject_footer_moreButton_width"
         android:layout_height="@dimen/postobject_footer_moreButton_height"
         android:layout_alignParentEnd="true"
-        android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:layout_marginRight="@dimen/postobject_footer_moreButton_margin_right"
+        android:layout_marginEnd="@dimen/postobject_footer_moreButton_margin_end"
         android:background="?attr/selectableItemBackground"
         android:foreground="@drawable/ic_post_options" />
 
@@ -66,7 +62,6 @@
         android:layout_width="@dimen/postobject_footer_imageView_size"
         android:layout_height="@dimen/postobject_footer_imageView_size"
         android:layout_alignParentStart="true"
-
         android:layout_centerVertical="true"
         android:layout_marginStart="@dimen/postobject_footer_imageView_margin_start"
         android:src="@drawable/ic_like_amount" />
