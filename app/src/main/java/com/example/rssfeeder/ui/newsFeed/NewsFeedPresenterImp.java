@@ -42,9 +42,7 @@ public class NewsFeedPresenterImp implements NewsFeedPresenter, NewsFeedInteract
             view.hideProgress();
             view.loadList(result.getPostObjects());
         }
-
     }
-
     public void onError(VolleyError error)
     {
         // show error

@@ -1,13 +1,8 @@
 package com.example.rssfeeder.repository.model;
 
-import android.media.Image;
-import android.nfc.Tag;
-import android.widget.EditText;
-
 import com.google.gson.annotations.SerializedName;
 
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
 
 /**
@@ -22,11 +17,11 @@ public class PostObject
     @SerializedName("comment_qty") private String commentQuantity;
     @SerializedName("like_qty") private String likeQuantity;
     @SerializedName("user_id") private int userID;
-    @SerializedName("user") private User user;
+    @SerializedName("user") private UserObject userObject;
     @SerializedName("comments_array") private CommentObject[] postComments;
     @SerializedName("images") private ImageObject[] imagesArray;
     @SerializedName("created") private String timeCreated;
-//    @SerializedName("comments_array") private ArrayList<S>
+
     public int getId()
     {
         return id;
@@ -83,13 +78,13 @@ public class PostObject
     {
         this.userID = userID;
     }
-    public User getUser()
+    public UserObject getUserObject()
     {
-        return user;
+        return userObject;
     }
-    public void setUser(User user)
+    public void setUserObject(UserObject userObject)
     {
-        this.user = user;
+        this.userObject = userObject;
     }
 
 
@@ -112,5 +107,16 @@ public class PostObject
     public void setTimeCreated(String timeCreated)
     {
         this.timeCreated = timeCreated;
+    }
+
+
+
+    public void setPostComments(CommentObject[] postComments) {
+        this.postComments = postComments;
+    }
+
+    public CommentObject[] getPostComments()
+    {
+        return postComments;
     }
 }

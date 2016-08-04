@@ -13,7 +13,7 @@
         android:orientation="vertical">
 
 
-        <include layout="@layout/postobject_header" />
+        <include layout="@layout/feed_postobject_header" />
 
 
         <TextView
@@ -36,10 +36,15 @@
             android:textAppearance="@style/TextAppearance.AppCompat.Small"
             tools:text="Saddasdasdaasdasad" />
 
+        <LinearLayout
+            android:id="@+id/layout_comments"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
+        </LinearLayout>
 
-        <include layout="@layout/postobject_footer" />
-
+        <include layout="@layout/feed_postobject_footer" />
     </LinearLayout>
 
 

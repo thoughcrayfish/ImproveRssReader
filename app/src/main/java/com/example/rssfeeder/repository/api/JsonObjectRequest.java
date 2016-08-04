@@ -20,7 +20,6 @@ import java.io.UnsupportedEncodingException;
  */
 public class JsonObjectRequest extends com.android.volley.toolbox.JsonRequest<JSONArray>
 {
-
     @Override
     protected Response<JSONArray> parseNetworkResponse(NetworkResponse networkResponse)
     {

@@ -6,27 +6,44 @@
 
     <dimen name="login_input_padding_horizontal">24dp</dimen>
     <dimen name="login_input_padding_vertical">32dp</dimen>
+
     <dimen name="row_padding">8dp</dimen>
     <dimen name="row_height">80dp</dimen>
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="nav_header_vertical_spacing">16dp</dimen>
     <dimen name="nav_header_height">160dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
-    <dimen name="postObject_like_left_margin">10dp</dimen>
-    <dimen name="postObject_footer_height">45dp</dimen>
-    <dimen name="postObject_like_marginLeft">5dp</dimen>
-    <dimen name="postObject_comments_marginLeft">40dp</dimen>
-    <dimen name="postobject_header_height">70dp</dimen>
-    <dimen name="postobject_userPic_marginLeft">7dp</dimen>
-    <dimen name="postobject_header_userPic_size">50dp</dimen>
-    <dimen name="postobject_header_likeMarginRight">10dp</dimen>
-    <dimen name="postobject_header_likeSize">35dp</dimen>
-    <dimen name="imageView_footer_size">18dp</dimen>
-    <dimen name="textView_userName_marginLeft">25dp</dimen>
-    <dimen name="postobject_header_marginTop">20dp</dimen>
-    <dimen name="linearLayout_galleryPost_height">200dp</dimen>
-    <dimen name="textSize_footerCreatedDate">10sp</dimen>
+
+    <dimen name="postObject_elements_left_margin">10dp</dimen>
+    <dimen name="postobject_userpic_margin_left">7dp</dimen>
+
     <dimen name="postObject_optionsButtonSIze">25dp</dimen>
+    <dimen name="linearLayout_galleryPost_height">200dp</dimen>
 
+    // postobject comment dimens
+    <dimen name="postobject_comment_margin_left">40dp</dimen>
+    <dimen name="postobject_comment_title_margin_top">10dp</dimen>
+    <dimen name="postobject_comment_avatar_margin_top">10dp</dimen>
+    <dimen name="postobject_comment_avatar_width">70dp</dimen>
 
+    // postobject header shieet
+    <dimen name="postobject_header_like_margin_end">10dp</dimen>
+    <dimen name="postobject_header_like_margin_right">10dp</dimen>
+    <dimen name="postobject_header_like_size">35dp</dimen>
+    <dimen name="postobject_header_user_location_margin_start">19dp</dimen>
+    <dimen name="postobject_header_user_name_margin_left">25dp</dimen>
+    <dimen name="postobject_header_userPic_size">50dp</dimen>
+    <dimen name="postobject_header_margin_top">20dp</dimen>
+    <dimen name="postobject_header_height">70dp</dimen>
+
+    // postobject footer
+    <dimen name="postobject_footer_imageView_size">18dp</dimen>
+    <dimen name="postobject_footer_moreButton_width">20dp</dimen>
+    <dimen name="postobject_footer_moreButton_height">5dp</dimen>
+    <dimen name="postobject_footer_moreButton_margin_right">10dp</dimen>
+    <dimen name="postobject_footer_timeCreated_margin_start">29dp</dimen>
+    <dimen name="postobject_footer_imageView_margin_start">20dp</dimen>
+    <dimen name="postObject_footer_height">45dp</dimen>
+    <dimen name="postobject_footer_like_margin_left">5dp</dimen>
+    <dimen name="postobject_footer_timeCreated_text_size">10sp</dimen>
 </resources>

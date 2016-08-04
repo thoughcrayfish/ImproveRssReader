@@ -6,37 +6,36 @@
 
 
     <TextView
-        android:id="@+id/editText_footer_likeQuantity"
+        android:id="@+id/textView_footer_likeQuantity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
-        android:layout_marginLeft="@dimen/postObject_like_marginLeft"
-        android:layout_marginStart="@dimen/postObject_like_marginLeft"
+        android:layout_marginLeft="@dimen/postobject_footer_like_margin_left"
+        android:layout_marginStart="@dimen/postobject_footer_like_margin_left"
         android:layout_toEndOf="@+id/imageView2"
         android:textAppearance="@style/TextAppearance.AppCompat.Caption"
         tools:text="35" />
 
 
     <TextView
-        android:id="@+id/editText_footer_commentsQuantity"
+        android:id="@+id/textView_footer_commentsQuantity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
-        android:layout_marginLeft="@dimen/postObject_like_marginLeft"
+        android:layout_marginLeft="@dimen/postobject_footer_like_margin_left"
         android:layout_toEndOf="@+id/imageView"
-        android:drawablePadding="@dimen/postObject_like_marginLeft"
+        android:drawablePadding="@dimen/postobject_footer_like_margin_left"
         android:textAppearance="@style/TextAppearance.AppCompat.Caption"
         tools:text="35" />
 
     <Button
         android:id="@+id/button_footer_more"
-        android:layout_width="30dp"
-        android:layout_height="8dp"
-        android:layout_marginRight="10dp"
+        android:layout_width="@dimen/postobject_footer_moreButton_width"
+        android:layout_height="@dimen/postobject_footer_moreButton_height"
         android:layout_alignParentEnd="true"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:translationZ="10dp"
+        android:layout_marginRight="@dimen/postobject_footer_moreButton_margin_right"
         android:background="?attr/selectableItemBackground"
         android:foreground="@drawable/ic_post_options" />
 
@@ -47,29 +46,35 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:layout_marginStart="29dp"
+        android:layout_marginStart="@dimen/postobject_footer_timeCreated_margin_start"
         android:textAppearance="@style/TextAppearance.AppCompat.Small"
-        android:textSize="@dimen/textSize_footerCreatedDate"
+        android:textSize="@dimen/postobject_footer_timeCreated_text_size"
         tools:text="30 минут назад" />
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="@dimen/imageView_footer_size"
-        android:layout_height="@dimen/imageView_footer_size"
+        android:layout_width="@dimen/postobject_footer_imageView_size"
+        android:layout_height="@dimen/postobject_footer_imageView_size"
         android:layout_centerVertical="true"
-        android:layout_marginStart="20dp"
-        android:layout_toEndOf="@+id/editText_footer_likeQuantity"
+        android:layout_marginStart="@dimen/postobject_footer_imageView_margin_start"
+        android:layout_toEndOf="@+id/textView_footer_likeQuantity"
         android:src="@drawable/ic_chat_bubble"
         android:tint="#a26e6e6e" />
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="@dimen/imageView_footer_size"
-        android:layout_height="@dimen/imageView_footer_size"
+        android:layout_width="@dimen/postobject_footer_imageView_size"
+        android:layout_height="@dimen/postobject_footer_imageView_size"
         android:layout_alignParentStart="true"
 
         android:layout_centerVertical="true"
-        android:layout_marginStart="10dp"
+        android:layout_marginStart="@dimen/postobject_footer_imageView_margin_start"
         android:src="@drawable/ic_like_amount" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/postobject_divider" />
 
 </RelativeLayout>

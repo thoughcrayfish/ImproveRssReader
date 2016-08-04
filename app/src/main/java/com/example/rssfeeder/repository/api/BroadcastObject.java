@@ -1,8 +1,10 @@
 package com.example.rssfeeder.repository.api;
 
+import com.example.rssfeeder.repository.model.CommentObject;
 import com.example.rssfeeder.repository.model.PostObject;
 import com.google.gson.annotations.SerializedName;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 /**
@@ -12,11 +14,16 @@ public class BroadcastObject
 {
     @SerializedName("error") int error;
     @SerializedName("data") ArrayList<PostObject> postObjects;
+    @SerializedName("comments_array") ArrayList<CommentObject> postComments;
     @SerializedName("last_id") String lastPostID;
     @SerializedName("last_type") String lastType;
 
     public ArrayList<PostObject> getPostObjects()
     {
         return postObjects;
+    }
+    public ArrayList<CommentObject> getPostComments()
+    {
+        return postComments;
     }
 }

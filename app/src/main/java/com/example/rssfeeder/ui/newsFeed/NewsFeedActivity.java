@@ -1,7 +1,12 @@
 package com.example.rssfeeder.ui.newsFeed;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -12,14 +17,15 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.AccelerateInterpolator;
 import android.view.animation.DecelerateInterpolator;
-import android.widget.Button;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
 
 import com.example.rssfeeder.AbstractActivity;
 import com.example.rssfeeder.R;
 import com.example.rssfeeder.adapters.FeedAdapter;
 import com.example.rssfeeder.repository.model.PostObject;
+import com.example.rssfeeder.ui.newsFeedDetail.NewsFeedDetailActivity;
 import com.example.rssfeeder.utils.AlertUtils;
 import com.example.rssfeeder.utils.DividerItemDecoration;
 import com.example.rssfeeder.utils.OnScrollListener;
@@ -30,7 +36,6 @@ import com.mikepenz.materialdrawer.DrawerBuilder;
 import com.mikepenz.materialdrawer.model.DividerDrawerItem;
 import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
 import com.mikepenz.materialdrawer.model.ProfileDrawerItem;
-import com.mikepenz.materialdrawer.model.SecondaryDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IProfile;
 
@@ -38,7 +43,6 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 
 /**
  * Created by Андрей on 04.07.2016.
@@ -57,6 +61,8 @@ public class NewsFeedActivity extends AbstractActivity implements NewsFeedView, 
     PrimaryDrawerItem item5 = new PrimaryDrawerItem().withIdentifier(5).withName("Settings");
     private String[] drawerList;
     private Toolbar toolbar;
+    private Drawer result = null;
+
     // ButterKnife
     @BindView(R.id.progressBar_feed) ProgressBar progressBar;
     @BindView(R.id.recyclerView_feed) RecyclerView mRecyclerView;
@@ -87,14 +93,17 @@ public class NewsFeedActivity extends AbstractActivity implements NewsFeedView, 
     @Override
     public boolean onOptionsItemSelected(MenuItem item)
     {
+        int id = item.getItemId();
         // Handle item selection
-        switch (item.getItemId())
+        switch (id)
         {
             case R.id.action_filter:
-                AlertUtils.alertSingleChoice(context, "Choose One", getResources().getStringArray(R.array.filter_options));
+                // Feed filter button functionality
+                AlertUtils.showToast(this, "Filter Button Pressed", Toast.LENGTH_SHORT);
                 return true;
             case R.id.action_search:
-
+                // Feed search button functionality
+                AlertUtils.showToast(this, "Search Button Pressed", Toast.LENGTH_SHORT);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
@@ -102,7 +111,7 @@ public class NewsFeedActivity extends AbstractActivity implements NewsFeedView, 
     }
     public void loadList(List<PostObject> result)
     {
-        FeedAdapter adapter = new FeedAdapter(NewsFeedActivity.this, result);
+        FeedAdapter adapter = new FeedAdapter(this, NewsFeedActivity.this, result);
         mRecyclerView.addItemDecoration(new DividerItemDecoration(this));
         mRecyclerView.setAdapter(adapter);
         mRecyclerView.setOnScrollListener(new OnScrollListener()
@@ -119,6 +128,12 @@ public class NewsFeedActivity extends AbstractActivity implements NewsFeedView, 
                 showToolbar();
             }
         });
+    }
+
+    @Override
+    public void loadNewsFeedDetailActivity(String id)
+    {
+        startActivity(NewsFeedDetailActivity.class, false, "id", id);
     }
 
     private void hideToolbar()
@@ -164,8 +179,7 @@ public class NewsFeedActivity extends AbstractActivity implements NewsFeedView, 
                     }
                 })
                 .build();
-
-        Drawer result = new DrawerBuilder()
+        result = new DrawerBuilder()
                 .withActivity(this)
                 .withToolbar(toolbar)
                 .withAccountHeader(headerResult)
@@ -186,11 +200,28 @@ public class NewsFeedActivity extends AbstractActivity implements NewsFeedView, 
                     @Override
                     public boolean onItemClick(View view, int position, IDrawerItem drawerItem)
                     {
-                        // do something with the clicked item :D
+                        // do something with the clicked item
                         return false;
                     }
                 })
                 .build();
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeButtonEnabled(false);
+    }
+
+    @Override
+    public void onBackPressed()
+    {
+        //handle the back press. close the drawer first and if the drawer is closed close the activity
+        if (result != null && result.isDrawerOpen())
+        {
+            result.closeDrawer();
+        }
+        else
+        {
+            super.onBackPressed();
+        }
     }
 
 }

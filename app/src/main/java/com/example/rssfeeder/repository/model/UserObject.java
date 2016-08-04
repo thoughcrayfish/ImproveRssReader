@@ -8,7 +8,7 @@ import java.util.Date;
 /**
  * Created by Андрей on 15.07.2016.
  */
-public class User
+public class UserObject
 {
     @SerializedName("week") private int currentWeek;
     @SerializedName("login") private String login;
@@ -16,10 +16,9 @@ public class User
     @SerializedName("firstname") private String firstName;
     @SerializedName("secondname") private String secondName;
     @SerializedName("avatar_90x90") private String userPicture;
+    @SerializedName("pregnant") private int pregnant;
+    @SerializedName("planning") private int planning;
 
-//    @SerializedName("pregnant") private boolean pregnant;
-//    @SerializedName("planning") private boolean plannin;
-//    @SerializedName("online") private boolean isOnline;
     public int getCurrentWeek()
     {
         return currentWeek;

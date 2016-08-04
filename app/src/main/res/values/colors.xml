@@ -8,7 +8,6 @@
     <color name="textIconsColor">#FFFFFF</color>
     <color name="primaryTextColor">#212121</color>
     <color name="secondaryTextColor">#727272</color>
-    <color name="dividerColor">#B6B6B6</color>
 
     <color name="buttonColor">#8BC34A</color>
     <color name="backgroundColor">#424242</color>
@@ -17,6 +16,10 @@
 
     <color name="drawer_backgroundColor">#fff3d3</color>
     <color name="drawer_divider">#dfdacc</color>
+
     <color name="text_accent">#2cabd9</color>
     <color name="drawer_primaryTextColor">#6a4f2a</color>
+
+    <color name="postobject_divider">#B6B6B6</color>
+    <color name="postobject_comment_background">#fcf9ee</color>
 </resources>

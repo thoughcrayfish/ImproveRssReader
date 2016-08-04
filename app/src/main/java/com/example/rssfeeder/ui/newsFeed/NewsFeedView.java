@@ -9,6 +9,6 @@ import java.util.List;
  */
 public interface NewsFeedView
 {
-    public void loadList(List<PostObject> result);
-
+    void loadList(List<PostObject> result);
+    void loadNewsFeedDetailActivity(String id);
 }

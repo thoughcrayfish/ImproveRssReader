@@ -9,6 +9,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.AppCompatActivity;
@@ -29,36 +30,28 @@ import java.util.List;
 /**
  * Created by Андрей on 07.07.2016.
  */
-public abstract class AbstractActivity extends ActionBarActivity
+public abstract class AbstractActivity extends AppCompatActivity
 {
-    private RelativeLayout progress;
     final Context context = this;
     private int animationLength = 1000;
-    @Override
-    public void setContentView(int layoutResID)
-    {
-        LayoutInflater layoutInflater = getLayoutInflater();
-        final View container = layoutInflater.inflate(R.layout.progress_layout, (ViewGroup) getWindow().getDecorView(), false);
-        layoutInflater.inflate(layoutResID, (ViewGroup) container.findViewById(R.id.cont_root), true);
-
-        super.setContentView(container);
-        setupUI(findViewById(R.id.scrollView_login));
-
-        progress = (RelativeLayout) findViewById(R.id.progress);
-        progress.setVisibility(View.GONE);
-
-    }
+//    @Override
+//    public void setContentView(int layoutResID)
+//    {
+//        LayoutInflater layoutInflater = getLayoutInflater();
+//        final View container = layoutInflater.inflate(R.layout.feed_activity, (ViewGroup) getWindow().getDecorView(), false);
+//        layoutInflater.inflate(layoutResID, (ViewGroup) container.findViewById(R.id.content_layout), true);
+//
+//        super.setContentView(container);
+//        setupUI(findViewById(R.id.scrollView_login));
+//
+//    }
 
     public void showProgress()
     {
-        progress = (RelativeLayout) findViewById(R.id.progress);
-        progress.setVisibility(View.VISIBLE);
-        progress.setBackgroundColor(getResources().getColor(R.color.progressBarBackground));
+
     }
     public void hideProgress()
     {
-        progress = (RelativeLayout) findViewById(R.id.progress);
-        progress.setVisibility(View.GONE);
         progressFadeOut();
     }
 
@@ -71,8 +64,9 @@ public abstract class AbstractActivity extends ActionBarActivity
         colorAnimation.addUpdateListener(new ValueAnimator.AnimatorUpdateListener()
         {
             @Override
-            public void onAnimationUpdate(ValueAnimator animator) {
-                progress.setBackgroundColor((int) animator.getAnimatedValue());
+            public void onAnimationUpdate(ValueAnimator animator)
+            {
+
             }
         });
         colorAnimation.start();
@@ -87,8 +81,9 @@ public abstract class AbstractActivity extends ActionBarActivity
         colorAnimation.addUpdateListener(new ValueAnimator.AnimatorUpdateListener()
         {
             @Override
-            public void onAnimationUpdate(ValueAnimator animator) {
-                progress.setBackgroundColor((int) animator.getAnimatedValue());
+            public void onAnimationUpdate(ValueAnimator animator)
+            {
+
             }
         });
         colorAnimation.start();
@@ -99,36 +94,27 @@ public abstract class AbstractActivity extends ActionBarActivity
         AlertUtils.showSimpleAlert(getResources().getString(R.string.login_fail), getResources().getString(R.string.login_error), context);
     }
 
-    protected void startActivity(Class activityClass)
-    {
-        startActivity(activityClass, false);
-        overridePendingTransition(R.anim.right_in, R.anim.right_out);
-    }
-
-
-    protected void startActivity(Class activityClass, boolean lockBackAction)
-    {
+    protected void startActivity(Class activityClass, boolean lockBackAction, String aditionalParameterName, String aditionalParameterValue) {
         Intent intent = new Intent(this, activityClass);
-        if (lockBackAction)
-        {
+        if (lockBackAction) {
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_NO_ANIMATION | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         }
-
+        if (aditionalParameterName != null && aditionalParameterValue != null)
+        {
+            intent.putExtra(aditionalParameterName, aditionalParameterValue);
+        }
         startActivity(intent);
-        overridePendingTransition(R.anim.right_in, R.anim.right_out);
     }
 
     @Override
     protected void onPause()
     {
-//        overridePendingTransition(R.anim.right_in, R.anim.right_out);
         super.onPause();
     }
 
     @Override
     public void onBackPressed()
     {
-        overridePendingTransition(R.anim.right_in, R.anim.right_out);
         super.onBackPressed();
     }
 

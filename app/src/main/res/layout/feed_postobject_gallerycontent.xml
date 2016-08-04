@@ -1,5 +1,4 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -10,7 +9,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <include layout="@layout/postobject_header" />
+        <include layout="@layout/feed_postobject_header" />
 
         <TextView
             android:id="@+id/textView_feedGalleryPostTitle"
@@ -38,8 +37,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:visibility="gone"
-            tools:visibility="visible"
-           >
+            tools:visibility="visible">
 
             <ImageView
                 android:id="@+id/imageView_onePicture"
@@ -55,8 +53,7 @@
             android:layout_width="match_parent"
             android:layout_height="300dp"
             android:visibility="gone"
-            tools:visibility="visible"
-            >
+            tools:visibility="gone">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -86,9 +83,9 @@
             android:id="@+id/linearLayout_threePictures"
             android:layout_width="match_parent"
             android:layout_height="300dp"
-            android:visibility="gone"
-            tools:visibility="visible"
             android:orientation="horizontal"
+            android:visibility="gone"
+            tools:visibility="gone"
 
             >
 
@@ -124,24 +121,6 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="0.5">
 
-                <!--<TextView-->
-                    <!--android:layout_width="80dp"-->
-                    <!--android:layout_height="40dp"-->
-                    <!--android:id="@+id/textView_morePhotos"-->
-                    <!--android:textAppearance="@style/TextAppearance.AppCompat.Title"-->
-                    <!--android:text="10"-->
-                    <!--android:layout_alignParentTop="true"-->
-                    <!--android:layout_alignParentEnd="true"-->
-                    <!--android:paddingRight="12dp"-->
-                    <!--android:gravity="center|right" />-->
-                <!--<ImageView-->
-
-                    <!--android:layout_width="80dp"-->
-                    <!--android:layout_height="40dp"-->
-                    <!--android:src="@drawable/ic_more_photos"-->
-                    <!--android:id="@+id/imageView_morePhotos"-->
-                    <!--android:layout_alignParentRight="true"-->
-                    <!--android:contentDescription="123" />-->
 
                 <ImageView
                     android:id="@+id/imageView_threePictures_3"
@@ -154,6 +133,8 @@
             </RelativeLayout>
         </LinearLayout>
 
-        <include layout="@layout/postobject_footer" />
+
+        <include layout="@layout/feed_postobject_footer" />
     </LinearLayout>
+
 </RelativeLayout>

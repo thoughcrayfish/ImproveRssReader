@@ -34,6 +34,7 @@ public class FeedGalleryViewHolder extends RecyclerView.ViewHolder
     protected TextView dateCreated;
     protected Button buttonFooterMore;
     protected Button buttonHeaderLike;
+    protected boolean hasImage = false;
 
         public FeedGalleryViewHolder(View view)
         {
@@ -48,8 +49,8 @@ public class FeedGalleryViewHolder extends RecyclerView.ViewHolder
             this.galleryPostThreePictures_2 = (ImageView) view.findViewById(R.id.imageView_threePictures_2);
             this.galleryPostThreePictures_3 = (ImageView) view.findViewById(R.id.imageView_threePictures_3);
 
-            this.likesQuantity = (TextView) view.findViewById(R.id.editText_footer_likeQuantity);
-            this.commentsQuantity = (TextView) view.findViewById(R.id.editText_footer_commentsQuantity);
+            this.likesQuantity = (TextView) view.findViewById(R.id.textView_footer_likeQuantity);
+            this.commentsQuantity = (TextView) view.findViewById(R.id.textView_footer_commentsQuantity);
             this.userFirstName = (TextView) view.findViewById(R.id.textView_header_userName);
             this.pregnancyDuration = (TextView) view.findViewById(R.id.textView_header_pregnancyDuration);
             this.userPicture = (ImageView) view.findViewById(R.id.imageView_header_userPic);
@@ -60,6 +61,7 @@ public class FeedGalleryViewHolder extends RecyclerView.ViewHolder
             this.dateCreated = (TextView) view.findViewById(R.id.textView_header_datePublished);
             this.buttonFooterMore = (Button) view.findViewById(R.id.button_footer_more);
             this.buttonHeaderLike = (Button) view.findViewById(R.id.button_header_like);
+
         }
 
 }

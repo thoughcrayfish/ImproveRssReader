@@ -17,6 +17,11 @@
 
         </activity>
         <activity
+            android:name=".ui.newsFeedDetail.NewsFeedDetailActivity"
+            android:windowSoftInputMode="stateAlwaysHidden">
+
+        </activity>
+        <activity
             android:name=".ui.newsFeed.NewsFeedActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

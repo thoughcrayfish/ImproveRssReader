@@ -14,23 +14,26 @@ public abstract class OnScrollListener extends RecyclerView.OnScrollListener
     @Override
     public void onScrolled(RecyclerView recyclerView, int dx, int dy)
     {
-        super.onScrolled(recyclerView, dx, dy);
+        if (recyclerView != null)
+        {
+            super.onScrolled(recyclerView, dx, dy);
 
-        if (scrolledDistance > HIDE_THRESHOLD && controlsVisible)
-        {
-            onHide();
-            controlsVisible = false;
-            scrolledDistance = 0;
-        } else if (scrolledDistance < -HIDE_THRESHOLD && !controlsVisible)
-        {
-            onShow();
-            controlsVisible = true;
-            scrolledDistance = 0;
-        }
+            if (scrolledDistance > HIDE_THRESHOLD && controlsVisible)
+            {
+                onHide();
+                controlsVisible = false;
+                scrolledDistance = 0;
+            } else if (scrolledDistance < -HIDE_THRESHOLD && !controlsVisible)
+            {
+                onShow();
+                controlsVisible = true;
+                scrolledDistance = 0;
+            }
 
-        if((controlsVisible && dy>0) || (!controlsVisible && dy<0))
-        {
-            scrolledDistance += dy;
+            if ((controlsVisible && dy > 0) || (!controlsVisible && dy < 0))
+            {
+                scrolledDistance += dy;
+            }
         }
     }
 

@@ -9,5 +9,22 @@ public class CommentObject
 {
     @SerializedName("id") private int id;
     @SerializedName("text") private String commentText;
-    @SerializedName("user") private User user;
+    @SerializedName("user") private UserObject userObject;
+
+    public String getCommentText()
+    {
+        return commentText;
+    }
+    public void setCommentText(String commentText)
+    {
+        this.commentText = commentText;
+    }
+    public UserObject getUserObject()
+    {
+        return userObject;
+    }
+    public void setUserObject(UserObject userObject)
+    {
+        this.userObject = userObject;
+    }
 }
